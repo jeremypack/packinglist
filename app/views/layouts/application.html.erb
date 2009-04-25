@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>iPackedit.com</title>
 <!--  <%= stylesheet_link_tag 'style' %>-->
-  <%= javascript_include_tag :defaults %>
+  <%#= javascript_include_tag :defaults %>
 </head>
 <body>
 	<div id="content">
@@ -24,13 +24,7 @@
 		<%= yield :layout %>
 		
 		
-		<h2>Your Bag</h2>
-		<ul>
-<% for bag_item in bag.bag_items %>
-			<li><%= bag_item.item.name %> x <%= bag_item.quantity%></li>
-<% end %>
-		</ul>
-		
+<%= render 'shared/bag_list' %>		
 						
 		<div id="footer">
 			copyright ipackedit.com 2009

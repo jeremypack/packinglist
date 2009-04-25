@@ -46,6 +46,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories
   map.resources :items
   map.resources :bags do |bags|
-    bags.resources :bag_items, :as => :items
+    bags.resources :bag_items, :as => :items, :member => {:increase_quantity => :put, :decrease_quantity => :put}
   end
 end

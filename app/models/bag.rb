@@ -9,5 +9,5 @@ class Bag < ActiveRecord::Base
       bag_items.create :item => item, :quantity => 1
     end
   end
-  
+ 
 end

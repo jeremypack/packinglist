@@ -1,0 +1,17 @@
+<h2>Your Bag</h2>
+
+<% if bag.bag_items.empty? %>
+Your Bag is Empty
+<% else %>
+
+<ul>
+	<% for bag_item in bag.bag_items %>
+		<li>
+			<%= bag_item.item.name %> x <%= bag_item.quantity%>
+
+			<%= link_to '[+]', increase_quantity_bag_bag_item_path(bag, bag_item), :method => :put %> | 
+			<%= link_to '[-]', decrease_quantity_bag_bag_item_path(bag, bag_item), :method => :put %>
+		</li>
+	<% end %>
+</ul>
+<% end %>
