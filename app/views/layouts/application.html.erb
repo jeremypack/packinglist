@@ -9,7 +9,7 @@
   <%#= javascript_include_tag :defaults %>
 </head>
 <body>
-	<div id="content">
+	<div id="container">
 		<div id="header">
 			<h1>ipackedit.com</h1>
 			<%= Category.all.map { |category| 
@@ -21,10 +21,15 @@
 		</div>
 		<% end -%>
 
-		<%= yield :layout %>
+		<div id="content">
+			<%= yield :layout %>
+		</div>
+		
+		<div id="sidebar">
+			<%= yield :sidebar %>
+		</div>
 		
 		
-<%= render 'shared/bag_list' %>		
 						
 		<div id="footer">
 			copyright ipackedit.com 2009

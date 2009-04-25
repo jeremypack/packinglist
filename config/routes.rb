@@ -45,7 +45,8 @@ ActionController::Routing::Routes.draw do |map|
   map.homepage '', :controller => 'pages', :action => 'homepage'
   map.resources :categories
   map.resources :items
-  map.resources :bags do |bags|
+  map.resources :bags, :member => {:email => :post} do |bags|
     bags.resources :bag_items, :as => :items, :member => {:increase_quantity => :put, :decrease_quantity => :put}
   end
+
 end

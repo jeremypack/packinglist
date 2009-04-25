@@ -1,4 +1,11 @@
-<h2>Your Bag</h2>
+<h1><%= bag.name %></h1>
+
+<% form_tag email_bag_path(bag) do %>
+<%= text_field_tag :email %>
+<%= submit_tag %>
+<% end %>
+
+
 
 <% if bag.bag_items.empty? %>
 Your Bag is Empty
@@ -15,5 +22,3 @@ Your Bag is Empty
 	<% end %>
 </ul>
 <% end %>
-
-<%= link_to 'View my Bag', bag %>

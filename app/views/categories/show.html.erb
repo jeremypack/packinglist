@@ -1,4 +1,7 @@
 <h1><%= @category.title %></h1>
+
+<%= render 'items/new_form' %>
+
 <% for item in @category.items %>			
 	<p>
 		<%=h item.name %><br />
@@ -12,4 +15,7 @@
 	</p>
 <% end %>
 
-<%= render 'items/new_form' %>
+
+<% content_for :sidebar do %>
+	<%= render 'shared/bag_list' %>		
+<% end %>

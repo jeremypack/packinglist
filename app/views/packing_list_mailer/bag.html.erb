@@ -1,0 +1,10 @@
+<p>Hi this is your packing list</p>
+
+<ul>
+	<% for bag_item in @bag.bag_items %>
+		<li>
+			<%= bag_item.item.name %> x <%= bag_item.quantity%>
+
+		</li>
+	<% end %>
+</ul>
