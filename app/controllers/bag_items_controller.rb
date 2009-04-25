@@ -7,6 +7,16 @@ class BagItemsController < ApplicationController
   end
   
   def update
+    @bag_item = bag.bag_items.find(params[:id])
+    @bag_item.attributes = params[:bag_item]
+    @bag_item.save
+
+    puts params.inspect
+
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js {  }
+    end
   end
   
   def destroy

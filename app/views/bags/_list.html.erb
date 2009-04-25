@@ -1,0 +1,18 @@
+<% for bag_item in bag.bag_items %>
+	<li<%= ' class="packed"' if bag_item.packed? %>>
+		<% form_for bag_item, :url => bag_bag_item_path(bag, bag_item), :html => {:method => :put} do |f| %>
+			<label>
+				<%= f.check_box :packed %>
+				<%= bag_item.item.name %> 
+			</label>
+	
+			x <%= bag_item.quantity%>
+
+			<%= link_to '[+]', increase_quantity_bag_bag_item_path(bag, bag_item), :method => :put %> | 
+			<%= link_to '[-]', decrease_quantity_bag_bag_item_path(bag, bag_item), :method => :put %>
+			
+			<input type="submit" value="Update" />
+		<% end %>
+
+	</li>
+<% end %>
