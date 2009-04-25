@@ -9,7 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090425095535) do
+ActiveRecord::Schema.define(:version => 20090425114257) do
+
+  create_table "bag_items", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "item_id"
+    t.integer  "bag_id"
+    t.integer  "quantity"
+    t.boolean  "packed",     :default => false
+  end
+
+  create_table "bags", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "user_id"
+  end
 
   create_table "categories", :force => true do |t|
     t.datetime "created_at"

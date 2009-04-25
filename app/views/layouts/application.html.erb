@@ -22,6 +22,15 @@
 		<% end -%>
 
 		<%= yield :layout %>
+		
+		
+		<h2>Your Bag</h2>
+		<ul>
+<% for bag_item in bag.bag_items %>
+			<li><%= bag_item.item.name %> x <%= bag_item.quantity%></li>
+<% end %>
+		</ul>
+		
 						
 		<div id="footer">
 			copyright ipackedit.com 2009

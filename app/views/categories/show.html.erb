@@ -1,7 +1,15 @@
 <h1><%= @category.title %></h1>
 <% for item in @category.items %>			
-	<%=h item.name %>
-	<%= image_tag item.image.url %>
+	<p>
+		<%=h item.name %><br />
+		<%= image_tag item.image.url %><br />
+
+		<% form_tag bag_bag_items_path(bag) do %>
+			<%= hidden_field_tag :item_id, item.id %>
+			<input type="submit" value="Add to bag" />
+		<% end %>
+
+	</p>
 <% end %>
 
 <%= render 'items/new_form' %>
