@@ -1,0 +1,4 @@
+<h1><%= @category.title %></h1>
+<% for item in @category.items %>			
+	<%=h item.name %>
+<% end %>
