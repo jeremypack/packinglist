@@ -44,4 +44,5 @@ ActionController::Routing::Routes.draw do |map|
 
   map.homepage '', :controller => 'pages', :action => 'homepage'
   map.resources :categories
+  map.resources :items
 end

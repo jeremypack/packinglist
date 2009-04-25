@@ -1,4 +1,7 @@
 <h1><%= @category.title %></h1>
 <% for item in @category.items %>			
 	<%=h item.name %>
+	<%= image_tag item.image.url %>
 <% end %>
+
+<%= render 'items/new_form' %>
