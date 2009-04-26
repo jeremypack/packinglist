@@ -5,10 +5,50 @@ body {
 	background-color: #fc0;
 }
 
+#container {
+	margin:auto;
+	width:820px;
+	height:auto;
+	border:solid thin black;
+}
+
 #content {
 	background-color:#fff;
-	width:750px;
+	width:820px;
+	float:left;
 }
+
+#category_menu {
+	width:820px;
+	float:left;
+	height:auto;
+	background-color:white;
+}
+
+#new_user_item {
+	width:820px;
+	float:left;
+	height:auto;
+	background-color:white;
+}
+
+#items_to_pack {
+	width:500px;
+	float:left;
+	height:auto;
+}
+
+#sidebar {
+	width:300px;
+	float:left;
+	height:auto;
+	background-color:white;
+}
+
 li.packed {
 	background-color:#cfc;
+}
+
+#footer {
+	clear:both;
 }

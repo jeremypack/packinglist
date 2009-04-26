@@ -1,21 +1,30 @@
+<%= Category.all.map { |category| 
+	link_to(category.title, category_path(category)) 
+ }.join(' | ') %>
+
 <h1><%= @category.title %></h1>
 
-<%= render 'items/new_form' %>
+<div id="new_user_item">
+	<%= render 'items/new_form' %>
+</div>
 
-<% for item in @category.items %>			
-	<p>
-		<%=h item.name %><br />
-		<%= image_tag item.image.url %><br />
+<div id="items_to_pack">
+	<% for item in @category.items %>			
+		<p>
+			<%=h item.name %><br />
+			<%= image_tag item.image.url %><br />
+			<%= image_tag item.image.url(:normal) %><br />
+			<%= image_tag item.image.url(:thumb) %><br />
 
-		<% form_tag bag_bag_items_path(bag) do %>
-			<%= hidden_field_tag :item_id, item.id %>
-			<input type="submit" value="Add to bag" />
-		<% end %>
+			<% form_tag bag_bag_items_path(bag) do %>
+				<%= hidden_field_tag :item_id, item.id %>
+				<input type="submit" value="Add to bag" />
+			<% end %>
 
-	</p>
-<% end %>
+		</p>
+	<% end %>
+</div>
 
 
-<% content_for :sidebar do %>
-	<%= render 'shared/bag_list' %>		
-<% end %>
+<%= render 'shared/bag_list' %>		
+

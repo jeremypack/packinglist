@@ -1,6 +1,6 @@
 <% form_for :item, :url => items_path, :html => {:multipart => true} do |f| %>
 	
-	<p>
+	<!-- <p> -->
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 
@@ -9,7 +9,8 @@
 		
 		<%= f.label :image %>
 		<%= f.file_field :image %>
-		<input type="submit" value="Create" />
-	</p>
-	
+		<!-- <input type="submit" value="Create" /> -->
+	<!-- </p> -->
+		<%= submit_tag 'Create' %>
+
 <% end  %>
