@@ -3,6 +3,7 @@
 		<% form_for bag_item, :url => bag_bag_item_path(bag, bag_item), :html => {:method => :put} do |f| %>
 			<label>
 				<%= f.check_box :packed %>
+				<%= image_tag bag_item.item.image.url(:normal) %>
 				<%= bag_item.item.name %> 
 			</label>
 	

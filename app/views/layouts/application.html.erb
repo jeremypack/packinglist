@@ -15,6 +15,9 @@
 		<div id="header">
 			<h1>ipackedit.com</h1> <!-- put in dynamic header -->
 		</div>
+		<div id="user_login_layout">
+			<%= render 'users/user_bar' %>
+		</div>
 		
 		<% if flash[:notice] -%>
 		<div id="flash"><%= flash[:notice] %>

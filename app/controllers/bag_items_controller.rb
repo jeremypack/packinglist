@@ -20,6 +20,8 @@ class BagItemsController < ApplicationController
   end
   
   def destroy
+#    @bag_item = bag.bag_item.find(:all)
+#    @bag_item.destroy
   end
   
   def increase_quantity

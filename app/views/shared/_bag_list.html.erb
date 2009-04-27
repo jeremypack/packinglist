@@ -7,6 +7,7 @@ Your Bag is Empty
 <ul>
 	<% for bag_item in bag.bag_items %>
 		<li>
+			<%= image_tag bag_item.item.image.url(:thumb) %>
 			<%= bag_item.item.name %> x <%= bag_item.quantity%>
 
 			<%= link_to '[+]', increase_quantity_bag_bag_item_path(bag, bag_item), :method => :put %> | 
@@ -14,6 +15,6 @@ Your Bag is Empty
 		</li>
 	<% end %>
 </ul>
+<%= link_to 'View my Bag', bag %>
 <% end %>
 
-<%= link_to 'View my Bag', bag %>

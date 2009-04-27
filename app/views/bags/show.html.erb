@@ -2,7 +2,7 @@
 
 <% form_tag email_bag_path(bag) do %>
 <%= text_field_tag :email %>
-<%= submit_tag %>
+<%= submit_tag "Send Email", :disable_with => "Sending..." %>
 <% end %>
 
 

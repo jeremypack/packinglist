@@ -1,6 +1,5 @@
 class BagsController < ApplicationController
   def show
-    
   end
   
   def email

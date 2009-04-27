@@ -12,6 +12,18 @@ body {
 	border:solid thin black;
 }
 
+#header {
+	float:left;
+	width:400px;
+	height:80px;
+}
+
+#user_login_layout {
+	float:left;
+	width:420px;
+	height:80px;
+}
+
 #content {
 	background-color:#fff;
 	width:820px;

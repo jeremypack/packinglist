@@ -22,9 +22,8 @@ test:
 
 production:
   adapter: mysql
-  #encoding: utf8
-  database: packinglist
-  username: root
-  password:
+  database: ipacked_packinglist
+  username: ipacked_bunging
+  password: 676734ed
   #socket: /tmp/mysql.sock
-  host: localhost
+  host: ipackedit.com
