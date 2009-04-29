@@ -1,1 +1,7 @@
-<%= @user.name %>
+<p><%= @user.name %></p>
+
+<% for bag in @user.bags %>
+	<%= link_to (bag.name, bag_path(bag)) %><br/>
+	<p><%= bag %></p>
+	
+<% end %>
