@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20090427192136) do
   create_table "bags", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "name",       :default => "My List..."
     t.integer  "user_id"
   end
 

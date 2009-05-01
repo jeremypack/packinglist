@@ -1,20 +1,30 @@
-<h2><%= bag.name %></h2>
-
-<% if bag.bag_items.empty? %>
-Your Bag is Empty
-<% else %>
-
-<ul>
-	<% for bag_item in bag.bag_items %>
-		<li>
-			<%= image_tag bag_item.item.image.url(:thumb) %>
-			<%= bag_item.item.name %> x <%= bag_item.quantity%>
-
-			<%= link_to '[+]', increase_quantity_bag_bag_item_path(bag, bag_item), :method => :put %> | 
-			<%= link_to '[-]', decrease_quantity_bag_bag_item_path(bag, bag_item), :method => :put %>
-		</li>
+<table width="300px">
+	<tr>
+		<td colspan="5"><h2><%= bag.name %></h2></td>
+	</tr>
+	<tr>
+		<% if bag.bag_items.empty? %>
+		<td colspan="5">Your Bag is Empty</td>
+		</tr>
+	
+		<% else %>
+	
+		<td colspan="5" class="underline">
+			<div id="view_my_bag"><h4>Clothes</h4></div><div id="view_my_bag"><%= link_to 'View my Bag', bag %></div></td>
+		</tr>
+		
+		<% for bag_item in bag.bag_items %>
+		<tr>
+			<td width="50px"><%= image_tag bag_item.item.image.url(:thumb) %></td>
+			<td width="55px"><span class="quantity"><%= bag_item.quantity%></span></td>
+			<td width="145px"><%= bag_item.item.name %></td>			
+			<td width="25px"><%= link_to '[+]', increase_quantity_bag_bag_item_path(bag, bag_item), :method => :put %></td>
+			<td width="25px"><%= link_to '[-]', decrease_quantity_bag_bag_item_path(bag, bag_item), :method => :put %></td>
+		</tr>
+		<% end %>
+	
+	
 	<% end %>
-</ul>
-<%= link_to 'View my Bag', bag %>
-<% end %>
+
+</table>
 

@@ -3,7 +3,7 @@ class CreateBags < ActiveRecord::Migration
     create_table :bags do |t|
 
       t.timestamps
-      t.string 'name', :defult => 'my list'
+      t.string 'name', :default => "My List..."
       t.integer 'user_id'
     end
   end

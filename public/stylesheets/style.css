@@ -1,23 +1,22 @@
+/*Application Layout*/
 body {
 	margin:0;
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:left;
-	background-color: #fc0;
+	background-color: #FFD726;
 }
-
 #container {
 	margin:auto;
 	width:820px;
 	height:auto;
+	border:thin black solid;
 }
-
 #header {
 	float:left;
 	width:400px;
 	height:70px;
 	font-family:Arial, Helvetica, sans-serif;
 }
-
 #user_login_layout {
 	float:left;
 	width:400px;
@@ -27,7 +26,17 @@ body {
 	padding-right:10px;
 	padding-top:45px;
 }
+#content {
+	background-color:#fff;
+	width:810px;
+	float:left;
+	padding:5px;
+}
+#footer {
+	clear:both;
+}
 
+/*Errors + Notice CSS*/
 #flash {
 	width:auto;
 	height:auto;
@@ -40,7 +49,6 @@ body {
 	margin:3px;
 	font-size:14px;
 }
-
 #error {
 	width:auto;
 	height:auto;
@@ -53,50 +61,117 @@ body {
 	margin:3px;
 	font-size:14px;
 }
-
 #check {
 	width:820px;
 	height:auto;
 	float:left;
 }
 
-#content {
-	background-color:#fff;
-	width:820px;
-	float:left;
-}
-
-#category_menu {
-	width:820px;
-	float:left;
+/*Wardrobe*/
+#wardrobe{
+	width:500px;
 	height:auto;
-	background-color:white;
-}
-
-#new_user_item {
-	width:820px;
 	float:left;
-	height:auto;
-	background-color:white;
+	border-right:10px solid gray;
 }
-
-#items_to_pack {
+#collection_of_items_to_pack {
 	width:500px;
 	float:left;
 	height:auto;
 }
+#item_to_pack {
+	width:100px;
+	float:left;
+	height:140px;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+}
+#new_user_item_form {
+	width:500px;
+	float:left;
+	height:auto;
+	background-color:white;
+	text-align:center;
+	padding-top:10px;
+}
+#category_menu {
+	width:500px;
+	float:left;
+	height:auto;
+	background-color:white;
+	text-align:center;
+}
+#wardrobe_title {
+	float:left;
+	width:500px;
+	height:auto;
+	margin-top:10px;
+}
 
-#sidebar {
+/*Shared Bag CSS*/
+#shared_bag {
 	width:300px;
 	float:left;
 	height:auto;
 	background-color:white;
+	text-transform:capitalize;
+}
+.quantity {
+	font-size: 36px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left:5px;
+	padding-right:5px;
+}
+.underline{
+	border-bottom:solid thin black;
+}
+#view_my_bag{
+	float:left;
+	font-size:10px;
+	width:60px;
+	height:20px;
+}
+#bag_category_title {
+	float:left;
+	width:240px;
+	height:20px;
 }
 
+/*JQuery CSS*/
+.overState{
+	background:blue;
+	color:white;
+/*	filter:alpha(opacity=40); */
+/*	-moz-opacity:.40;
+	opacity:.40;*/
+}
 li.packed {
 	background-color:#cfc;
 }
 
-#footer {
-	clear:both;
+/*Headers*/
+h1 {
+}
+h2 {
+	line-height:0px;
+	font-size:18px;
+}
+h3 {
+}
+h4 {
+	line-height:0px;
+	border:solid thin black;
+	font-size:14px;
+	display: inline;	
+}
+
+/*Links*/
+a:link {
+}
+a:visited {
+}
+a:hover {
+}
+a:active {
 }
