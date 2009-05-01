@@ -5,9 +5,9 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>packing list application for your trip</title>
+  <title><%= controller.action_name %> / <%=  %> / <%= h(bag.id) %></title>
 	<%= stylesheet_link_tag 'style' %>
-  <%= javascript_include_tag 'jquery-1.3.2.min.js', 'packit' %>
+  <%= javascript_include_tag 'jquery-1.3.2.min.js', 'packit', 'byebye' %>
 </head>
 
 <body>
@@ -20,10 +20,21 @@
 		</div>
 		
 		<% if flash[:notice] -%>
-		<div id="flash"><%= flash[:notice] %>
-		</div>
+		<div id="check">
+			<div id="flash"><%= flash[:notice] %>
+			</div>
+		</div>	
 		<% end -%>
+		
+		<div id="check">
+		
+		<% if flash[:error] -%>
+			<div id="error"><%= flash[:error] %>
+			</div>
 
+		<% end -%>
+				</div>
+		
 		<div id="content">
 			<%= yield :layout %>
 		</div>

@@ -3,7 +3,7 @@
 <ul>
 	<% for bag_item in @bag.bag_items %>
 		<li>
-			<%= bag_item.item.name %> x <%= bag_item.quantity%>
+			<%= image_tag bag_item.item.image.url(:thumb) %> <%= bag_item.item.name %> x <%= bag_item.quantity%>
 
 		</li>
 	<% end %>

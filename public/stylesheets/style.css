@@ -9,19 +9,55 @@ body {
 	margin:auto;
 	width:820px;
 	height:auto;
-	border:solid thin black;
 }
 
 #header {
 	float:left;
 	width:400px;
-	height:80px;
+	height:70px;
+	font-family:Arial, Helvetica, sans-serif;
 }
 
 #user_login_layout {
 	float:left;
-	width:420px;
-	height:80px;
+	width:400px;
+	height:25px;
+	text-align:right;
+	text-transform: capitalize;
+	padding-right:10px;
+	padding-top:45px;
+}
+
+#flash {
+	width:auto;
+	height:auto;
+	background-color: #99EE6B;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	color: white;
+	padding:5px;
+	border:2px solid #329000;
+	margin:3px;
+	font-size:14px;
+}
+
+#error {
+	width:auto;
+	height:auto;
+	background-color: #F56E8B;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	color: white;
+	padding:5px;
+	border:2px solid #990021;
+	margin:3px;
+	font-size:14px;
+}
+
+#check {
+	width:820px;
+	height:auto;
+	float:left;
 }
 
 #content {

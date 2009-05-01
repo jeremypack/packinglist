@@ -7,4 +7,5 @@ class BagsController < ApplicationController
     flash[:notice] = "Email successfully sent"
     redirect_to bag
   end
+  
 end

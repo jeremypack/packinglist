@@ -1,2 +1,3 @@
 public/system
 log/*
+config/initializers/site_keys.rb
