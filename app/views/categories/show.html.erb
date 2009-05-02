@@ -1,35 +1,40 @@
 <div id="wardrobe">
 	<div id="category_menu">
-<%= Category.all.map { |category| 
-	link_to(category.title, category_path(category)) 
- }.join(' | ') %>
+		<%= Category.all.map { |category| 
+			link_to(category.title, category_path(category)) 
+		 }.join(' | ') %>
 	</div>
 	
-<div id="new_user_item_form">
-	<%= render 'items/new_form' %>
-</div>
-
-<div id="wardrobe_title" class="underline">
-	<div id="wardrobe_category_title"><%= @category.title %></div><div id="view_my_bag"><%= link_to 'View my Bag', bag %></div>
+	<div id="new_user_item_form">
+		<%= render 'items/new_form' %>
 	</div>
 
-<div id="collection_of_items_to_pack">
-	<% for item in @category.items %>			
-		<div id="item_to_pack">
-			<%= image_tag item.image.url(:normal) %>
-			<%=h item.name %>
+	<!-- <div id="wardrobe_title" class="underline">
+		<div id="wardrobe_category_title"><h3><%= @category.title %></h3></div><div id="view_my_bag"><%= link_to 'View my Bag', bag %></div>
+	</div> -->
+	
+	<div id="wardrobe_title" class="underline">
+		<h3 id="wardrobe_category_title"><%= @category.title %></h3><span class="view_my_bag"><%= link_to 'View my List', bag %></span>
+	</div>
+	
+
+	<div id="collection_of_items_to_pack">
+		<% for item in @category.items %>			
+			<div class="item_to_pack">
+				<%= image_tag item.image.url(:normal) %>
+				<%=h item.name %>
 			
 
-			<% form_tag bag_bag_items_path(bag) do %>
-				<%= hidden_field_tag :item_id, item.id %>
-				<!-- <input type="submit" value="Add to bag" /> -->
-				<%= submit_tag "Add to Bag" %>
-			<% end %>
+				<% form_tag bag_bag_items_path(bag) do %>
+					<%= hidden_field_tag :item_id, item.id %>
+					<!-- <input type="submit" value="Add to bag" /> -->
+					<%= submit_tag "Add to Bag", :class => 'add' %>
+				<% end %>
+		</div>
+		<% end %>
 	</div>
-	<% end %>
-</div>
 </div>
 
 <div id="shared_bag">
-<%= render 'shared/bag_list' %>
+	<%= render 'shared/bag_list' %>
 </div>

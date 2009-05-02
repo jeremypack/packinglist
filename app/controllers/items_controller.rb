@@ -9,4 +9,9 @@ class ItemsController < ApplicationController
     end
     redirect_to :back
   end
+  
+  def index
+    @items = Item.search(params[:search])
+  end
+
 end

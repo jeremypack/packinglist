@@ -2,3 +2,7 @@
   <%= text_field_tag :search, params[:search] %>
 	<%= submit_tag "Search", :class => 'create', :name => nil %>
 <% end -%>
+
+  <% for item in @items %>
+    <%= item.name %>
+  <% end %>

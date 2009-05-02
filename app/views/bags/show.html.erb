@@ -1,17 +1,22 @@
-<h1><%= bag.name %></h1>
+<div id="packing_container">
+	<div id="packing_list_title"><h2><%= bag.name %></h2>Save Bag</div>
+	<div id="add_more_stuff"> <%= link_to 'Add More Items', :back %></div>
+	<div id="packing_email_form">
+	<% form_tag email_bag_path(bag) do %>
+	<%= text_field_tag :email, 'email', :size => 25 %>
+	<%= submit_tag "Send Email", :class => 'create', :disable_with => "Sending..." %>
+	<% end %>
+	</div>
 
-<% form_tag email_bag_path(bag) do %>
-<%= text_field_tag :email %>
-<%= submit_tag "Send Email", :disable_with => "Sending..." %>
-<% end %>
+	<div id="the_packing_list_holder">
+	<% if bag.bag_items.empty? %>
+	Your Bag is Empty
+	<% else %>
 
-
-
-<% if bag.bag_items.empty? %>
-Your Bag is Empty
-<% else %>
-
-<ul id="bag_list">
-	<%= render 'list' %>
-</ul>
-<% end %>
+	<ul id="bag_list">
+		<%= render 'list' %>
+	</ul>
+	<% end %>
+	
+	</div>
+</div>

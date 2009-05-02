@@ -4,22 +4,23 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:left;
 	background-color: #FFD726;
+	color:#333;
 }
 #container {
 	margin:auto;
-	width:820px;
+	width:960px;
 	height:auto;
-	border:thin black solid;
+	background-color:white;
 }
 #header {
 	float:left;
-	width:400px;
+	width:500px;
 	height:70px;
 	font-family:Arial, Helvetica, sans-serif;
 }
 #user_login_layout {
 	float:left;
-	width:400px;
+	width:450px;
 	height:25px;
 	text-align:right;
 	text-transform: capitalize;
@@ -28,7 +29,7 @@ body {
 }
 #content {
 	background-color:#fff;
-	width:810px;
+	width:950px;
 	float:left;
 	padding:5px;
 }
@@ -62,24 +63,53 @@ body {
 	font-size:14px;
 }
 #check {
-	width:820px;
+	width:960px;
 	height:auto;
 	float:left;
 }
 
 /*Wardrobe*/
 #wardrobe{
-	width:500px;
+	width:640px;
 	height:auto;
 	float:left;
-	border-right:10px solid gray;
+	border-right:10px solid #CCC;
+}
+#category_menu {
+	width:635px;
+	float:left;
+	height:auto;
+	background-color:white;
+	text-align:center;
+	padding-top:10px;
+	font-size:15px;
+}
+#new_user_item_form {
+	width:635px;
+	float:left;
+	height:auto;
+	background-color:white;
+	text-align:center;
+	padding-top:10px;
+}
+#wardrobe_title {
+	float:left;
+	width:635px;
+	height:auto;
+	margin-top:10px;
+}
+#wardrobe_category_title{
+	float:left;
+	width:575px;
+	height:20px;
 }
 #collection_of_items_to_pack {
-	width:500px;
+	width:635px;
 	float:left;
 	height:auto;
+	margin-right:5px;
 }
-#item_to_pack {
+.item_to_pack {
 	width:100px;
 	float:left;
 	height:140px;
@@ -87,27 +117,8 @@ body {
 	text-align:center;
 	text-transform:capitalize;
 }
-#new_user_item_form {
-	width:500px;
-	float:left;
-	height:auto;
-	background-color:white;
-	text-align:center;
-	padding-top:10px;
-}
-#category_menu {
-	width:500px;
-	float:left;
-	height:auto;
-	background-color:white;
-	text-align:center;
-}
-#wardrobe_title {
-	float:left;
-	width:500px;
-	height:auto;
-	margin-top:10px;
-}
+
+
 
 /*Shared Bag CSS*/
 #shared_bag {
@@ -126,16 +137,42 @@ body {
 .underline{
 	border-bottom:solid thin black;
 }
-#view_my_bag{
+.view_my_bag{
 	float:left;
 	font-size:10px;
 	width:60px;
-	height:20px;
+	height:15px;
+	padding-top:5px
 }
 #bag_category_title {
 	float:left;
-	width:240px;
+	width:230px;
 	height:20px;
+}
+table{
+	float:left;
+}
+
+/*Packing List Tick*/
+#packing_container {
+	width:960px;
+	float:left;
+}
+#packing_list_title{
+	width:400px;
+	height:30px;
+	float:left;
+}
+#add_more_stuff {
+	width:200px;
+	height:30px;
+	float:left;
+}
+#packing_email_form{
+	width:350px;
+	height:30px;
+	float:left;
+	text-align:right;
 }
 
 /*JQuery CSS*/
@@ -152,26 +189,46 @@ li.packed {
 
 /*Headers*/
 h1 {
+	font-size:24px;
 }
 h2 {
-	line-height:0px;
+	margin:0px;
 	font-size:18px;
+	display:inline;
 }
 h3 {
+	margin:0px;
 }
 h4 {
-	line-height:0px;
-	border:solid thin black;
+	margin:10px;
 	font-size:14px;
 	display: inline;	
 }
 
 /*Links*/
 a:link {
+	color:#066;
 }
 a:visited {
+	color:#066;
 }
 a:hover {
+	color:#06c;
 }
 a:active {
+	color:#06c;
+}
+
+/*Buttons*/
+.add { 
+	color: #fff; 
+	font-size: 10px; 
+	background-color: #00ca04; 
+	border: solid 2px #009e03;
+}
+.create {
+	color: #fff; 
+	font-size: 12px; 
+	background-color: #ec7a00; 
+	border: solid 2px #c36500;
 }

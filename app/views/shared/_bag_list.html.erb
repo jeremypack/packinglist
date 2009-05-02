@@ -1,18 +1,15 @@
-<table width="300px">
-	<tr>
-		<td colspan="5"><h2><%= bag.name %></h2></td>
-	</tr>
-	<tr>
+<h2><%= bag.name %></h2>
+
 		<% if bag.bag_items.empty? %>
-		<td colspan="5">Your Bag is Empty</td>
-		</tr>
+		<p>Your Bag is Empty</p>
 	
 		<% else %>
 	
-		<td colspan="5" class="underline">
-			<div id="view_my_bag"><h4>Clothes</h4></div><div id="view_my_bag"><%= link_to 'View my Bag', bag %></div></td>
-		</tr>
-		
+
+		<div id="bag_category_title"><h4>Clothes</h4></div>
+		<span class="view_my_bag"><%= link_to 'View my List', bag %></span>
+
+		<table width="300px">
 		<% for bag_item in bag.bag_items %>
 		<tr>
 			<td width="50px"><%= image_tag bag_item.item.image.url(:thumb) %></td>

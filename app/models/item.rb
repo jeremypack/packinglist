@@ -8,4 +8,13 @@ class Item < ActiveRecord::Base
   has_attached_file :image, :styles => { :thumb => "50x50#", :normal => "100x100#" }
   validates_attachment_content_type :image, :content_type => 'image/jpeg'  
   validates_attachment_presence :image
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
 end
