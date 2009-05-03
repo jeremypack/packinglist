@@ -1,11 +1,12 @@
-<h2><%= bag.name %></h2>
+<div id="bag_title">
+	<h2><%= bag.name %></h2>
 
 		<% if bag.bag_items.empty? %>
 		<p>Your Bag is Empty</p>
 	
 		<% else %>
 	
-
+</div>
 		<div id="bag_category_title"><h4>Clothes</h4></div>
 		<span class="view_my_bag"><%= link_to 'View my List', bag %></span>
 

@@ -10,24 +10,20 @@ $(document).ready(function() {
 
 // Flash Slides Up
 	setTimeout (function() { jQuery("div[id=check]").slideUp('normal'); }, 4000);
-
-// Easier Bag View
-//	setTimeout (function() { jQuery('table').slideUp('normal'); }, 4000);
-	
-	$(':header').click(function() {
-		jQuery('table').slideUp('normal');
-	})
+	});
 
 
 // Autocomplete function not working
 //	$("input#new_user_item_form").autocomplete("auto_complete_for_item_search")
 	
-	
+
+
 // Packing tick boxes
 	setupBagList();
 
 
-	});
+});
+
 // Packing tick boxes
 function setupBagList()
 {
@@ -39,4 +35,3 @@ function setupBagList()
 		$.post(url, data, null, 'script');
 	});
 }
-

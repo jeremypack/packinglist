@@ -6,6 +6,7 @@ $(document).ready(function() {
 		$(this).removeClass("overState");	
 	});
 	
+//	$("input#new_user_item_form").autocomplete("auto_complete_for_item_search")
 
 	
 	// $("tr:gt(1)").mouseover(function() {
