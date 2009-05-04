@@ -3,6 +3,22 @@
 	<%= submit_tag "Search", :class => 'create', :name => nil %>
 <% end -%>
 
+<%= link_to 'New Item', '/items/new' %>
+<table width= "500px">
   <% for item in @items %>
-    <%= item.name %>
+<tr>
+    <td width="50px" height="50px"><%= image_tag item.image.url(:thumb) %></td>  
+		<td> 
+		<% form_for :item do |f| %>		
+		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => "select a category" %>
+		<%= f.submit"Update"%>
+		<% end %>
+		</td>
+		<td width="100px"><%= item.name %></td>
+		<td><%= link_to 'Edit', edit_item_path(item) %></td>
+		<td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+
+</tr>
   <% end %>
+
+</table>

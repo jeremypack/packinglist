@@ -1,4 +1,4 @@
-<h1>Log In</h1>
+<h2>Log In</h2>
 
 <% form_tag session_path do -%>
 <p><%= label_tag 'login' %><br />
@@ -7,10 +7,11 @@
 <p><%= label_tag 'password' %><br/>
 <%= password_field_tag 'password', nil %></p>
 
-<!-- Uncomment this if you want this functionality
+<%= hidden_field_tag :bag_id, session[:bag_id] %>
+
 <p><%= label_tag 'remember_me', 'Remember me' %>
 <%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
 
-<p><%= submit_tag 'Log in' %></p>
+
+<p><%= submit_tag 'Log in', :class => 'create' %></p>
 <% end -%>

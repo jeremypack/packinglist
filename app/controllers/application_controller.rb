@@ -11,16 +11,16 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   
-  def bag
-    return @bag if @bag
+  def current_bag
+    return @current_bag if @current_bag
     if session[:bag_id]
-      @bag = Bag.find(session[:bag_id])
+      @current_bag = Bag.find(session[:bag_id])
     else
-      @bag = Bag.create
-      session[:bag_id] = @bag.id
+      @current_bag = Bag.create
+      session[:bag_id] = @current_bag.id
     end
-    @bag
+    @current_bag
   end
-  helper_method :bag
-  
+  helper_method :current_bag
+
 end

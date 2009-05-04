@@ -2,4 +2,12 @@
 
 <% for bag in @user.bags %>
 	<%= link_to (bag.name, bag_path(bag)) %><br/>	
+		<p>
+			
+			<% for bag_item in bag.bag_items %>
+			<%= bag_item.item.name %> 
+			<% end %>
+		
+		</p>
 <% end %>
+

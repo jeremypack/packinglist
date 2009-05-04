@@ -56,5 +56,5 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :bags, :member => {:email => :post} do |bags|
     bags.resources :bag_items, :as => :items, :member => {:increase_quantity => :put, :decrease_quantity => :put}
   end
-
+  map.reasons '/reasons', :controller => 'pages', :action => 'reasons'
 end

@@ -1,10 +1,9 @@
-<div id="wardrobe">
-	
-	<!-- <div id="new_user_item_form">
-		<%= render 'items/new_form' %>
-	</div> -->
+<div id="new_user_item_form">
+	<%= render 'items/new_form' %>
+</div>
 
-	
+<div id="wardrobe">
+		
 	<div id="wardrobe_title" class="underline">
 		<h3 id="wardrobe_category_title"><%= @category.title %></h3>
 	</div>
@@ -23,7 +22,7 @@
 				<%=h item.name %>
 			
 
-				<% form_tag bag_bag_items_path(bag) do %>
+				<% form_tag bag_bag_items_path(current_bag) do %>
 					<%= hidden_field_tag :item_id, item.id %>
 					<!-- <input type="submit" value="Add to bag" /> -->
 					<%= submit_tag "Add to Bag", :class => 'add' %>

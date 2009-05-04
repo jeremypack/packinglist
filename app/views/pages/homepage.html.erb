@@ -1,10 +1,27 @@
 <div id="advert_picture">
+			<span id="huge">Be Prepared</span>
 	<p span class="banner">
-	Need <%= link_to 'more reasons', "/reasons" %> to create a packing list?
+	Need any <%= link_to 'more reasons', "/reasons" %> to<br/> create a packing list?
 	</p>
 
 	<p>
 	<span class="clickme"><%= link_to 'Start Packing', "/categories/1"%></span>
 	</p>
 </div>
+<div id="about_me">
+	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	
+</div>
 
+<div id ="completed_bags_holder">
+	<% for bag in @bag do%>
+	<div class="completed_bag">
+		<%= link_to (bag.name, bag_path(bag)) %><br/>
+		<% for bag_item in bag.bag_items %>
+		<%= image_tag bag_item.item.image.url (:thumb) %>
+		<!-- <%= bag_item.item.name %>  -->
+		<% end %>
+		</div>	
+	<% end %>
+	
+</div>

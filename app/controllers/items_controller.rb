@@ -13,5 +13,24 @@ class ItemsController < ApplicationController
   def index
     @items = Item.search(params[:search])
   end
+  
+  def edit
+    @item = Item.find(params[:id])  
+  end
+  
+  def update
+    @item = Item.find(params[:id])
+      if @item.update_attributes(params[:id])
+        flash[:notice] = 'Item was successfully updated.'
+      else
+        flash[:error] = 'Something went wrong'
+    end
+  end
+
+  
+  def destroy
+    @item = Item.find(params[:id])
+     @item.destroy
+  end
 
 end
