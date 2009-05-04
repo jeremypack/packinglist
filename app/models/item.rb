@@ -9,9 +9,9 @@ class Item < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"], :order => "created_at")
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"], :order => "category_id")
     else
-      find(:all, :order => "created_at")
+      find(:all, :order => "category_id DESC")
     end
   end
   

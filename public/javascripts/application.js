@@ -12,8 +12,6 @@ $(document).ready(function() {
 	setTimeout (function() { jQuery("div[id=check]").slideUp('normal'); }, 4000);
 
 // Easier Bag View
-//	setTimeout (function() { jQuery('table').slideUp('normal'); }, 4000);
-	
 	$(':header').click(function() {
 		jQuery('table').slideUp('normal');
 	})
@@ -21,11 +19,21 @@ $(document).ready(function() {
 
 // Autocomplete function not working
 //	$("input#new_user_item_form").autocomplete("auto_complete_for_item_search")
+
+
+// Add to Bag
+$(".add_to_my_bag").click(function() {
+	$.post($(this).attr("action"), $(this).serialize(), null, "script");
+	return false;
+})
+
+// $('.item_to_pack').click(function() {
+// 	this.hide();
+// })
 	
 	
 // Packing tick boxes
 	setupBagList();
-
 
 	});
 // Packing tick boxes

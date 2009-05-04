@@ -10,7 +10,7 @@
     <td width="50px" height="50px"><%= image_tag item.image.url(:thumb) %></td>  
 		<td> 
 		<% form_for :item do |f| %>		
-		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => "select a category" %>
+		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => item.category.title %>
 		<%= f.submit"Update"%>
 		<% end %>
 		</td>

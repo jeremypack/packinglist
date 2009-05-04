@@ -9,4 +9,8 @@ class BagsController < ApplicationController
     redirect_to bag
   end
   
+  def index
+    @bags = Bag.find(:all)
+  end
+  
 end

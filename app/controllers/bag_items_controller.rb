@@ -3,7 +3,11 @@ class BagItemsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
     current_bag.add_item(item)
-    redirect_to :back
+    
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js {  }
+    end
   end
   
   def update
