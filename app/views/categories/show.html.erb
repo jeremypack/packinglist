@@ -21,7 +21,8 @@
 		<% for item in @category.items %>			
 			<div class="item_to_pack">
 				<%= image_tag item.image.url(:normal) %>
-				<%=h item.name %>
+				<%= item.name %><br/>
+				<span class="buy_now"><%= link_to 'buy now', item.buy_now %></span>
 			
 
 				<% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>

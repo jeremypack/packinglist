@@ -1,0 +1,15 @@
+<% @title = "Reasons" %>
+<p></p>
+<h2 class="underline">More Reasons</h2>
+<p></p>
+
+<% @reasons.each do |reason| %>
+<div class="reasons_picture">
+	<%= image_tag reason.image.url %>
+
+
+	<h3 class="underline"><%=h reason.title %></h3>
+	<p><%=h reason.argument %></p>
+	<p><%= link_to 'Start Packing', '/categories/1' %></p>
+</div>
+<% end %>

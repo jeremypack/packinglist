@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
@@ -56,6 +57,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :bags, :member => {:email => :post} do |bags|
     bags.resources :bag_items, :as => :items, :member => {:increase_quantity => :put, :decrease_quantity => :put}
   end
-  map.reasons '/reasons', :controller => 'pages', :action => 'reasons'
   map.resources :blogs
+  map.resources :reasons
+  
 end

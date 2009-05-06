@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-// Rollover
+// Rollover Wardrobe
 	$(".item_to_pack").hover(function() {
 	   $(this).addClass("overState");
 	}, function() {
@@ -8,12 +8,19 @@ $(document).ready(function() {
 	});
 
 
+// Rollover Bag
+	$(".bag_category_title").hover(function() {
+		$(this).next().andSelf().addClass("overState");
+	}, function() {
+		$(this).next().andSelf().removeClass("overState");
+	});
+
 // Flash Slides Up
 	setTimeout (function() { jQuery("div[id=check]").slideUp('normal'); }, 4000);
 
-// Easier Bag View
-	$(':header').click(function() {
-		jQuery('table').slideUp('normal');
+// Sliding Bag View
+	$('.bag_category_title').click(function() {
+		$(this).next().next().slideToggle('normal');
 	})
 
 
@@ -26,10 +33,6 @@ $(".add_to_my_bag").click(function() {
 	$.post($(this).attr("action"), $(this).serialize(), null, "script");
 	return false;
 })
-
-// $('.item_to_pack').click(function() {
-// 	this.hide();
-// })
 	
 	
 // Packing tick boxes

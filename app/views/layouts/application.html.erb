@@ -14,7 +14,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><%= link_to 'ipackedit.com', '/' %></h1> <!-- put in dynamic header -->
+			<h1><%= link_to 'iPacked it.com', '/' %></h1> <!-- put in dynamic header -->
 		</div>
 		<div id="user_login_layout">
 			<%= render 'users/user_bar' %>
@@ -39,7 +39,11 @@
 		<div id="content">
 			<%= yield :layout %>
 		</div>
-	
+		
+		
+		<div id="share_me_bar">
+			<%= render '/pages/share_me' %>
+		</div>
 						
 		<div id="footer">
 			copyright ipackedit.com 2009

@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @reason.title %>
+</p>
+
+<p>
+  <b>Argument:</b>
+  <%=h @reason.argument %>
+</p>
+
+<p>
+  <b>Image file name:</b>
+  <%=h @reason.image_file_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_reason_path(@reason) %> |
+<%= link_to 'Back', reasons_path %>

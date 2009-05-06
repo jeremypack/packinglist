@@ -1,6 +1,7 @@
 class BagsController < ApplicationController
   def show
-    @bag = current_user.bags.find(params[:id])
+#    @bag = current_user.bags.find(params[:id])
+    @bag = Bag.find(params[:id])
   end
   
   def email

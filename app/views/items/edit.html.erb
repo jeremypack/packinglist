@@ -9,6 +9,15 @@
 	<p>
 		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => "select a category" %>
 	</p>
+	<p>
+		<%= f.label :buy_now, 'Buy Link' %>
+		<%= f.text_field :buy_now %>
+	</p>
+	<p>
+		<%= f.label :image %>:
+		<%= f.file_field :image %>
+		<!-- <input type="submit" value="Create" /> -->
+	</p>
   <p>
     <%= f.submit "Update" %>
   </p>
