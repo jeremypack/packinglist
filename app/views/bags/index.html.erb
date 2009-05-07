@@ -1,10 +1,25 @@
 <table width= "500px">
-  <% for bag in @bags %>
-<tr>
-		<td><%= bag.name %>
-		</td>
+	<tr>
+		<th>Template</th>
+		<th>Featured</th>
+		<th>Name</th>
+		<th></th>
+	</tr>
 
-</tr>
-  <% end %>
+	<% for bag in @bags %>
+	<% form_for bag, :url => bag_path(bag), :html => {:method => :put} do |f| %>
+	<tr>
+		<td>
+			<%= f.check_box :template %>
+		</td>
+		<td>
+			<%= f.check_box :featured %>
+		</td>
+		<td><%= bag.name %></td>
+		<td><%= f.submit %></td>
+	</tr>
+	<% end %>
+
+	<% end %>
 
 </table>

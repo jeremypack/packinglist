@@ -4,11 +4,11 @@
 <div id="advert_picture">
 			<span id="huge">Be Prepared</span>
 	<p span class="banner">
-	Need any <%= link_to 'more reasons', "/reasons" %> to<br/> create a packing list?</br/>
+	Need any <%= link_to 'more reasons', reasons_path %> to<br/> create a packing list?</br/>
 	</p>
 
 	<p>
-	<span class="clickme"><%= link_to 'Start Packing', "/categories/1"%></span>
+	<span class="clickme"><%= link_to 'Start Packing', category_path(Category.first)%></span>
 	</p>
 </div>
 <div id="about_me">
@@ -24,14 +24,12 @@
 
 <div id ="completed_bags_holder">
 	<h3 class="underline">Featured List</h3>
-	<% for bag in @bag do %>
 	<div class="completed_bag">
-		<%= link_to (bag.name, bag_path(bag)) %><br/>
-		<% for bag_item in bag.bag_items %>
+		<%= link_to (@featured_bag.name, bag_path(@featured_bag)) %><br/>
+		<% for bag_item in @featured_bag.bag_items %>
 		<%= image_tag bag_item.item.image.url (:thumb) %>
 		<!-- <%= bag_item.item.name %>  -->
 		<% end %>
 		</div>	
-	<% end %>
 	
 </div>
