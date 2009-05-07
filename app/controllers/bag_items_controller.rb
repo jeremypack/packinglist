@@ -11,7 +11,8 @@ class BagItemsController < ApplicationController
   end
   
   def update
-    @bag_item = bag.bag_items.find(params[:id])
+    @bag = Bag.find(params[:bag_id])
+    @bag_item = @bag.bag_items.find(params[:id])
     @bag_item.attributes = params[:bag_item]
     @bag_item.save
 

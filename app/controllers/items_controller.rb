@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  
+  before_filter :admin_required, :except => :create
+  
   def create
 #    raise params.inspect
     @item = Item.new(params[:item])
@@ -20,11 +23,12 @@ class ItemsController < ApplicationController
   
   def update
     @item = Item.find(params[:id])
-      if @item.update_attributes(params[:id])
+      if @item.update_attributes(params[:item])
         flash[:notice] = 'Item was successfully updated.'
       else
         flash[:error] = 'Something went wrong'
     end
+    redirect_to items_path
   end
 
   

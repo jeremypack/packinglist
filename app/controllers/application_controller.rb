@@ -54,4 +54,10 @@ class ApplicationController < ActionController::Base
     current_bag.save    
   end
   
+  def admin_required
+    current_user && current_user.admin? ? true : access_denied
+  end
+  
+  
+  
 end

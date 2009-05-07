@@ -1,6 +1,6 @@
 <div id="packing_container">
 	<div id="packing_list_title"><h2><%= @bag.name %></h2></div>
-	<div id="add_more_stuff"> <%= link_to 'Add More Items', ('/categories/1') %></div>
+	<div id="add_more_stuff"> <%= link_to 'Add More Items', make_current_bag_path(@bag), :method => :put %></div>
 	<div id="packing_email_form">
 		
 	<% form_tag email_bag_path(@bag) do %>

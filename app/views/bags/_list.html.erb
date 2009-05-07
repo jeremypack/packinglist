@@ -10,7 +10,7 @@
   <tr>
 	  <td width="50px" align="right" class="quantity"><%= bag_item.quantity%></td>
     <td width="50px" ><%= image_tag bag_item.item.image.url(:thumb) %></td>
-		<td width="200px"><% form_for bag_item, :url => bag_bag_item_path(current_bag, bag_item), :html => {:method => :put} do |f| %>
+		<td width="200px"><% form_for bag_item, :url => bag_bag_item_path(@bag, bag_item), :html => {:method => :put} do |f| %>
 			<label>
 				<%= f.check_box :packed %>
 				<%= bag_item.item.name %>
