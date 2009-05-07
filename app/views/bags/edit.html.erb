@@ -1,0 +1,21 @@
+<div id="packing_container">
+	<div id="packing_list_title"><h2><%= @bag.name %></h2></div>
+	<div id="add_more_stuff"> <%= link_to 'Add More Items', make_current_bag_path(@bag), :method => :put %></div>
+	<div id="packing_email_form">
+		
+	<% form_tag email_bag_path(@bag) do %>
+	<%= text_field_tag :email, 'email', :size => 25 %>
+	<%= submit_tag "Send Email", :class => 'create', :disable_with => "Sending..." %>
+	<% end %>
+	</div>
+
+	<% if @bag.bag_items.empty? %>
+	Your Bag is Empty
+	</div>
+	<% else %>
+
+	<%= render 'list' %>
+
+	<% end %>
+	
+</div>

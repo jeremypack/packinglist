@@ -1,44 +1,57 @@
 $(document).ready(function() {
 
-// Rollover Wardrobe
+	// Rollover Wardrobe
 	$(".item_to_pack").hover(function() {
-	   $(this).addClass("overState");
+		$(this).addClass("overState");
 	}, function() {
 		$(this).removeClass("overState");	
 	});
 
 
-// Rollover Bag
+	// Rollover Bag
 	$(".bag_category_title").hover(function() {
 		$(this).next().andSelf().addClass("overState");
 	}, function() {
 		$(this).next().andSelf().removeClass("overState");
 	});
 
-// Flash Slides Up
+	// Flash Slides Up
 	setTimeout (function() { jQuery("div[id=check]").slideUp('normal'); }, 4000);
 
-// Sliding Bag View
+	// Sliding Bag View
 	$('.bag_category_title').click(function() {
 		$(this).next().next().slideToggle('normal');
 	})
 
 
-// Autocomplete function not working
-//	$("input#new_user_item_form").autocomplete("auto_complete_for_item_search")
+	// Autocomplete function not working
+	//	$("input#new_user_item_form").autocomplete("auto_complete_for_item_search")
 
-
-// Add to Bag
-$(".add_to_my_bag").click(function() {
-	$.post($(this).attr("action"), $(this).serialize(), null, "script");
-	return false;
-})
+	// Add to Bag
+	$(".add_to_my_bag").click(function() {
+		$.post($(this).attr("action"), $(this).serialize(), null, "script");
+		return false;
+	})	
 	
-	
-// Packing tick boxes
+	// Packing tick boxes
 	setupBagList();
-
+		
+	$('#packing_container .editable').editable(edit_bag_url, {
+		submit : 'OK',
+		method: 'PUT',
+		id: 'elementid'
 	});
+	$('#packing_container #country').editable(edit_bag_url, {
+		submit : 'OK',
+		method: 'PUT',
+		id: 'elementid',
+		type: 'select',
+		data: ['a','b','c']
+	});		
+
+});
+
+
 // Packing tick boxes
 function setupBagList()
 {

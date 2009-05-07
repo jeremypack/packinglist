@@ -24,11 +24,21 @@ class BagsController < ApplicationController
   
   def update
     @bag = Bag.find(params[:id])
-    #@bag.update_attributes(params[:bag])
-    @bag.template = params[:bag][:template]
-    @bag.featured = params[:bag][:featured]
-    @bag.save
-    redirect_to bags_path
+    
+    if params[:elementid]
+      
+      if %w(name title country description departure_date).include?(params[:elementid])
+        @bag.update_attribute(params[:elementid], params[:value])
+      end
+      render :text => @bag.send(params[:elementid])
+
+    else
+      @bag.update_attributes(params[:bag])
+      @bag.template = params[:bag][:template]
+      @bag.featured = params[:bag][:featured]
+      @bag.save
+      redirect_to bags_path
+    end
   end
 
   def use_template
