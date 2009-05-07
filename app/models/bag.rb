@@ -2,6 +2,8 @@ class Bag < ActiveRecord::Base
   has_many :bag_items, :dependent => :destroy
   has_many :items, :through => :bag_items
   belongs_to :user
+
+  named_scope :recent, :order => 'created_at DESC'
   
   def add_item(item)
     if bag_item = bag_items.detect{|bag_item| bag_item.item_id == item.id}

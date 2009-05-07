@@ -1,7 +1,13 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+
   has_many :bags
+  
+  def most_recent_bag
+    bags.recent.first
+  end
+
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
