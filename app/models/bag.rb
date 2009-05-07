@@ -1,5 +1,5 @@
 class Bag < ActiveRecord::Base
-  has_many :bag_items, :dependent => :destroy
+  has_many :bag_items, :dependent => :destroy, :include => :item, :order => 'items.name'
   has_many :items, :through => :bag_items
   belongs_to :user
 
@@ -20,6 +20,7 @@ class Bag < ActiveRecord::Base
     else
       bag_items.create :item => item, :quantity => 1
     end
+    bag_items(true)
   end
  
   def ensure_only_one_bag_is_featured

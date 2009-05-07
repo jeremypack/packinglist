@@ -1,9 +1,10 @@
 <% @title = "Create a New Bag" %>
 
+<% if @category == @categories.last %>
 <div id="new_user_item_form">
 	<%= render 'items/new_form' %>
 </div>
-
+<% end %>
 <div id="wardrobe">
 		
 	<div id="wardrobe_title" class="underline">
@@ -11,7 +12,7 @@
 	</div>
 	
 	<div id="category_menu">
-		<%= Category.all.map { |category| 
+		<%= @categories.map { |category| 
 			link_to(category.title, category_path(category)) 
 		 }.join(' / ') %>
 	</div>
