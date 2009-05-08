@@ -10,6 +10,7 @@ class Bag < ActiveRecord::Base
     find(:first, :conditions => {:featured => true})
   end
   
+
   attr_protected :template, :featured
   
   after_save :ensure_only_one_bag_is_featured

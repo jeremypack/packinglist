@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+
+  before_filter :admin_required
+
   
   def new
     @blog = Blog.new
@@ -6,6 +9,20 @@ class BlogsController < ApplicationController
   
   def show
     @blog = Blog.find(params[:id])
+  end
+  
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+  
+  def update
+    @blog = Blog.find(params[:id])
+      if @blog.update_attributes(params[:blog])
+        flash[:notice] = 'Blog was successfully updated.'
+      else
+        flash[:error] = "Something went wrong! sorry..."
+      end
+    end
   end
   
   def create
