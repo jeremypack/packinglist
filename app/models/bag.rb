@@ -3,6 +3,9 @@ class Bag < ActiveRecord::Base
   has_many :items, :through => :bag_items
   belongs_to :user
 
+  validates_presence_of :month, :message => "Please select a month"
+  validates_presence_of :description, :message => "Please write a short description"
+
   named_scope :recent, :order => 'created_at DESC'
   named_scope :template, :conditions => {:template => true}
   
@@ -37,5 +40,6 @@ class Bag < ActiveRecord::Base
     end
     bag
   end
- 
+
+
 end

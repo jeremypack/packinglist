@@ -1,5 +1,7 @@
 <% @bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
-<div><h4><%= category.title %></h4></div>
+
+<div class="category_packing_title"><h4><%= category.title %></h4></div>
+
 <div class="the_packing_list_holder">
 
 	<% for bag_item in bag_items %>
@@ -18,8 +20,6 @@
 				<input type="submit" value="Packed" class="create" />
 				<% end %>
 		</td>				
-		<!-- <td align="right" class="plus"><%= link_to '+', increase_quantity_bag_bag_item_path(current_bag, bag_item), :method => :put %></td>
-		<td align="left" class="minus"><%= link_to '-', decrease_quantity_bag_bag_item_path(current_bag, bag_item), :method => :put %></td> -->
   </tr>
 </table>
 </div>

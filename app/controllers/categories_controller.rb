@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   
-  before_filter :ensure_current_bag_exists
+  # before_filter :ensure_current_bag_exists
   
   def show
     @categories = Category.all

@@ -8,9 +8,23 @@
 	</p>
 
 	<p>
-	<span class="clickme"><%= link_to 'Start Packing', category_path(Category.first)%></span>
+	<span class="clickme"><%= link_to('start new bag', bags_path, :method => :post) %></span>
 	</p>
 </div>
+
+<div id="walk_through">
+	<h2 class="underline">Its Easy</h2>
+	<div class="walking">
+		<h3 class="underline">1. Create it</h3>	</div>
+	<div class="walking">
+		<h3 class="underline">2. Save it</h3>	</div>
+	<div class="walking">
+		<h3 class="underline">3. Pack it</h3>	</div>
+	<div class="walking">
+		<h3 class="underline">4. Relax</h3>
+	</div>
+</div>
+
 <div id="about_me">
 	<!-- <p>
 		<script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/coop/api/014644366262561101381/cse/26l8skoujgy/gadget&amp;synd=open&amp;w=320&amp;h=75&amp;title=Search&amp;border=%23ffffff%7C0px%2C1px+solid+%23ffdd00%7C0px%2C2px+solid+%23ffdd33%7C0px%2C2px+solid+%23ffee99&amp;output=js"></script>
@@ -23,13 +37,11 @@
 </div>
 
 <div id ="completed_bags_holder">
-	<h3 class="underline">Featured List</h3>
+	<h2 class="underline">Featured List</h2>
 	<div class="completed_bag">
-		<%= link_to (@featured_bag.name, bag_path(@featured_bag)) %><br/>
+		<p><%= link_to (@featured_bag.name, bag_path(@featured_bag)) %> - <%= @featured_bag.description %></p>
 		<% for bag_item in @featured_bag.bag_items %>
 		<%= image_tag bag_item.item.image.url (:thumb) %>
-		<!-- <%= bag_item.item.name %>  -->
 		<% end %>
-		</div>	
-	
+	</div>	
 </div>

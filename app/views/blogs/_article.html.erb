@@ -1,8 +1,7 @@
-<% for blog in @blog do %>
-
 <h2 class ="underline">Recent News</h2>
-
-<h5><%= blog.title %></h5><%= blog.created_at %>
+<p></p>
+<% for blog in @blog do %>
+<strong><%= blog.title %></strong> - <span class="light"><%= blog.created_at.to_formatted_s(:short) %></span>
 <p><%= blog.article %></p>
 
 <% end %>

@@ -1,11 +1,11 @@
-<h3 class="underline">Packing Template's</h3>
+<h2 class="underline">Packing Templates</h2>
 <table>
-	<% for bag in @bag_templates do%>
+	<% for bag in @bag_templates do %>
 	<tr>
 		<td width="250px">
 			<%= bag.name %>
 		</td>
-		<td class="create"><%= link_to 'Start Packing', use_template_bag_path(bag), :method => :post %></td>
+		<td><%= link_to 'Use Template', use_template_bag_path(bag), :method => :post, :class => "link_button" %></td>
 	</tr>
 	<% end %>
 	

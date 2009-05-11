@@ -14,7 +14,7 @@ class BagItemsController < ApplicationController
     @bag_item = @bag.bag_items.find(params[:id])
     @bag_item.attributes = params[:bag_item]
     @bag_item.save
-
+    
     puts params.inspect
 
     respond_to do |format|

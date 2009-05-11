@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= @title %> / iPackedit.com: "The best online resource for packing"</title>
 	<%= stylesheet_link_tag 'style' %>
-  <%= javascript_include_tag 'jquery-1.3.2.min.js', 'jquery-ui-1.7.1.custom.min', 'jquery.jeditable.mini.js', 'application'%>
+  <%= javascript_include_tag 'jquery-1.3.2.min.js', 'jquery-ui-1.7.1.custom.min', 'application'%>
 	<%= yield :head %>
 	<link rel="Shortcut Icon" href="/favicon.ico">
 </head>
@@ -15,11 +15,18 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><%= link_to 'iPacked it.com', '/' %></h1> <!-- put in dynamic header -->
+			<h1><%= link_to 'iPacked it.com', homepage_path %></h1>
+		</div>
+		<div id="selected_bag">
+		<% if current_bag.nil? %>
+		<% else %>
+		<%= current_bag.name %>
+		<% end %>
 		</div>
 		<div id="user_login_layout">
 			<%= render 'users/user_bar' %>
 		</div>
+		<div id="tag_line"><em> never forget anything for your travels again!</em></div>
 		
 		<% if flash[:notice] -%>
 		<div id="check">

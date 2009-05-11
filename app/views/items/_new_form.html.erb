@@ -1,14 +1,29 @@
 <% form_for :item, :url => items_path, :html => {:multipart => true} do |f| %>	
-	<!-- <p> -->
-		<%= f.label :name %>:
-		<%= f.text_field :name, :size => '20'%>
+<fieldset> 
+<legend>Create A New Item</legend>
 
+<div id="new_item_form">
+	
+		<p>
+		<%= f.label :name %>:
+		<%= f.text_field :name, :size => '20', :class => 'create_input'%>
+		</p>
 		<%= f.hidden_field :category_id, :value => "8"%>
-		
+		<p>
 		<%= f.label :image %>:
 		<%= f.file_field :image, :size => '20' %>
+		</p>
 		<!-- <input type="submit" value="Create" /> -->
-	<!-- </p> -->
-		<%= submit_tag 'Create Item', :class => 'add' %>
+
+		<%= submit_tag 'Create Item', :class => 'submit_form' %>
+		
+</div>	
+	
+<div id="new_item_instructions">If you can not find what you are looking for then creating a new item is easy!<p> <strong>Adding a Photo is optional</strong></p>
+  </div>
+
+</fieldset> 
+
 
 <% end  %>
+

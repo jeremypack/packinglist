@@ -1,39 +1,40 @@
 <% @title = "Create a New Bag" %>
 
-<% if @category == @categories.last %>
-<div id="new_user_item_form">
+<div id="new_user_item_container">
+	<% if @category == @categories.last %>
 	<%= render 'items/new_form' %>
+	<% end %>
 </div>
-<% end %>
+
+<div id="finished_packing"><%= link_to 'Finished', current_bag, :class => 'link_button_green' %></div>
+
 <div id="wardrobe">
-		
 	<div id="wardrobe_title" class="underline">
 		<h2 id="wardrobe_category_title"><%= @category.title %></h2>
 	</div>
-	
+
 	<div id="category_menu">
 		<%= @categories.map { |category| 
-			link_to(category.title, category_path(category)) 
-		 }.join(' / ') %>
+		link_to(category.title, category_path(category)) 
+		}.join(' / ') %>
 	</div>
-	
+
 
 	<div id="collection_of_items_to_pack">
 		<% for item in @category.items %>			
-			<div class="item_to_pack">
-				<%= image_tag item.image.url(:normal) %>
-				<%= item.name %><br/>
-				<span class="buy_now"><%= link_to 'buy now', item.buy_now %></span>
-			
-
-				<% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>
-					<%= hidden_field_tag :item_id, item.id %>
-					<!-- <input type="submit" value="Add to bag" /> -->
-					<%= submit_tag "Add to Bag", :class => 'add' %>
-				<% end %>
+		<div class="item_to_pack">
+			<%= image_tag item.image.url(:normal) %>
+			<%= item.name %><br/>
+			<span class="buy_now"><%= link_to 'buy now', item.buy_now %></span>
+			<% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>
+			<%= hidden_field_tag :item_id, item.id %>
+			<!-- <input type="submit" value="Add to bag" /> -->
+			<%= submit_tag "Add to Bag", :class => 'add' %>
+			<% end %>
 		</div>
 		<% end %>
 	</div>
+
 </div>
 
 <div id="shared_bag">

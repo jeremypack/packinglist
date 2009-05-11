@@ -24,35 +24,33 @@ class ApplicationController < ActionController::Base
     session[:bag_id] = bag.id
   end
 
-  def start_new_bag
-    self.current_bag = Bag.create
-  end
-  
-  def ensure_current_bag_exists
-    if current_bag.nil?
-      start_new_bag
-    end
-  end
-  
-  def assign_current_bag_to_current_user
-    
-    puts 'assign_current_bag_to_current_user'
-    
-    # if a bag in session belongs to another user, start a new one
-    if current_bag and current_bag.user and current_bag.user != current_user
-      start_new_bag
-    end
-    
-    if current_bag.nil? and bag = current_user.most_recent_bag
-      puts 'assign bag from database to session'
-      self.current_bag = bag
-    end
-    
-    ensure_current_bag_exists
-    
-    current_bag.user = current_user
-    current_bag.save    
-  end
+
+
+  # def ensure_current_bag_exists
+  #   if current_bag.nil?
+  #     start_new_bag
+  #   end
+  # end
+  # 
+  # def assign_current_bag_to_current_user
+  #   
+  #   puts 'assign_current_bag_to_current_user'
+  #   
+  #   # if a bag in session belongs to another user, start a new one
+  #   if current_bag and current_bag.user and current_bag.user != current_user
+  #     start_new_bag
+  #   end
+  #   
+  #   if current_bag.nil? and bag = current_user.most_recent_bag
+  #     puts 'assign bag from database to session'
+  #     self.current_bag = bag
+  #   end
+  #   
+  #   ensure_current_bag_exists
+  #   
+  #   current_bag.user = current_user
+  #   current_bag.save    
+  # end
   
   def admin_required
     current_user && current_user.admin? ? true : access_denied

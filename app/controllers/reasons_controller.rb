@@ -24,7 +24,7 @@ class ReasonsController < ApplicationController
       if @reason.save
         flash[:notice] = 'Reason was successfully created.'
       else
-        flash[:error] = "Nots so good"
+        flash[:error] = "Not so good"
       end
       redirect_to :back
   end

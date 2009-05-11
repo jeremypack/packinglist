@@ -6,5 +6,5 @@ class PagesController < ApplicationController
     
     @blog = Blog.find(:all, :limit => 1, :order => "created_at asc")
   end
-
+  
 end

@@ -1,13 +1,29 @@
-<p><%= @user.name %></p>
+<% if current_user == @user %>
+<div id="users_details">
+	<h2><%= @user.name %></h2>
+	<p><%= @user.email %></p>
+
+</div>
+
+<div id="pack_another_bag">	<p><%= link_to 'create new list', :class => "link_button" %></p>	</div>
 
 <% for bag in @user.bags %>
-	<%= link_to (bag.name, bag_path(bag)) %><br/>	
-		<p>
-			
-			<% for bag_item in bag.bag_items %>
-			<%= bag_item.item.name %> 
-			<% end %>
-		
-		</p>
+
+<div id="past_lists_created">
+<fieldset><legend><%= link_to (bag.name, bag_path(bag)) %></legend>
+<p><strong><%= bag.month %></strong> trip to <strong><%= bag.country %></strong> - <span class="light"><%= bag.created_at.to_formatted_s(:short) %></span></p>
+<p>	<%= bag.description %></p>
+<% for bag_item in bag.bag_items %>
+<%= image_tag bag_item.item.image(:thumb) %> 
 <% end %>
 
+</fieldset>
+</div>
+<% end %>
+
+
+
+
+<% else %>
+
+<% end %>

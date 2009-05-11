@@ -1,21 +1,52 @@
-<div id="packing_container">
-	<div id="packing_list_title"><h2><%= @bag.name %></h2></div>
-	<div id="add_more_stuff"> <%= link_to 'Add More Items', make_current_bag_path(@bag), :method => :put %></div>
-	<div id="packing_email_form">
-		
-	<% form_tag email_bag_path(@bag) do %>
-	<%= text_field_tag :email, 'email', :size => 25 %>
-	<%= submit_tag "Send Email", :class => 'create', :disable_with => "Sending..." %>
-	<% end %>
-	</div>
+<% if current_user == @bag.user %>
 
-	<% if @bag.bag_items.empty? %>
-	Your Bag is Empty
-	</div>
-	<% else %>
+<FIELDSET>
+<LEGEND>Save My Bag</LEGEND>
 
-	<%= render 'list' %>
+<div id="save_my_bag_details_form">
+<% form_for(@bag) do |f| %>
+<%= f.error_messages %>
 
-	<% end %>
-	
+<p>
+<%= f.label :name, 'Bag Name:' %><br />
+<%= f.text_field :name, :size => '42', :class => "create_input" %>
+</p>
+Where are you going ?<br/>
+<%= f.country_select("country", "Country") %>
+</p>
+<p>When are you leaving ?<br/>
+<%= f.select(:month, %w{ January February March April May June July August September October November December }) %> 
+</p>
+<p>Who is the list for ?<br/>
+<%= f.select(:gender, %w{ N/A Male Female }) %> 
+</p>
+<p>
+<%= f.label :description, 'A Short Description:' %><br />
+<%= f.text_area :description, :cols => 40, :rows => 10, :class => "create_input" %>
+</p>
+<p>
+<%= hidden_field_tag :user_id, :user_id %>
+
+</p>
+<p>
+<%= f.submit 'Save', :class => 'submit_form' %>
+</p>
+<% end %>
 </div>
+
+
+<div id="save_my_bag_instructions">
+	
+	<p>Before you save your list it is a good idea to describe it with some information so that you remember why you packed what you did. This makes it easier change and reuse later on.</p>
+	
+	<p>Panic is what they want</p>
+	
+	<p>If you are going traveling for more than a month or are traveling to multiple destinations then please select the month you depart and
+		your main country.</p>
+</div>
+
+</FIELDSET>
+<% else %>
+
+<p>This isn't your bag</p>
+<% end %>

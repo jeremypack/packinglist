@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-  before_filter :admin_required
+#  before_filter :admin_required, :except => :show
 
   
   def new
@@ -22,7 +22,6 @@ class BlogsController < ApplicationController
       else
         flash[:error] = "Something went wrong! sorry..."
       end
-    end
   end
   
   def create
