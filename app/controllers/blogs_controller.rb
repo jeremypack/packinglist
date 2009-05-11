@@ -1,7 +1,9 @@
 class BlogsController < ApplicationController
 
 #  before_filter :admin_required, :except => :show
-
+  def index
+    @blogs = Blog.all
+  end
   
   def new
     @blog = Blog.new
@@ -19,8 +21,10 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
       if @blog.update_attributes(params[:blog])
         flash[:notice] = 'Blog was successfully updated.'
+        redirect_to homepage_path
       else
         flash[:error] = "Something went wrong! sorry..."
+        render :action => 'edit'
       end
   end
   

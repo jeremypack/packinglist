@@ -24,7 +24,11 @@ class ApplicationController < ActionController::Base
     session[:bag_id] = bag.id
   end
 
-
+  def start_new_bag
+    @bag = Bag.create
+    self.current_bag = @bag
+    redirect_to category_path(Category.first)
+  end
 
   # def ensure_current_bag_exists
   #   if current_bag.nil?

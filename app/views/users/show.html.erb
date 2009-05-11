@@ -11,7 +11,7 @@
 
 <div id="past_lists_created">
 <fieldset><legend><%= link_to (bag.name, bag_path(bag)) %></legend>
-<p><strong><%= bag.month %></strong> trip to <strong><%= bag.country %></strong> - <span class="light"><%= bag.created_at.to_formatted_s(:short) %></span></p>
+<p><strong><%= bag.month %></strong> trip to <strong><%= bag.country %></strong> - <span class="light"><%= bag.created_at.to_formatted_s(:short) %></span> <%= link_to 'Delete', bag, :confirm => "Delete '#{bag.name}'?", :method => :delete %></p>
 <p>	<%= bag.description %></p>
 <% for bag_item in bag.bag_items %>
 <%= image_tag bag_item.item.image(:thumb) %> 

@@ -18,22 +18,8 @@ class BagsController < ApplicationController
     redirect_to category_path(Category.first)
   end
   
-  def start_new
-    @bag = Bag.create
-    self.current_bag = @bag
-    redirect_to category_path(Category.first)
-  end
-  
   def create
-    @bag = Bag.new(params[:bag])
-    if @bag.save
-      self.current_bag = @bag
-      flash[:notice] = "Successfully created bag."
-      redirect_to category_path(Category.first)
-    else
-      flash[:error] = "Not working!"
-      redirect_to :back
-    end
+     start_new_bag
   end
   
   def email
@@ -63,7 +49,11 @@ class BagsController < ApplicationController
     @bag.featured = params[:bag][:featured]
     @bag.save
     flash[:notice] = "Successfully created..."
-    redirect_to bags_path
+    if current_user.name == 'jeremy'
+      redirect_to bags_path
+    else
+      redirect_to user_path(current_user)
+    end
     # end
   end
   
@@ -76,6 +66,12 @@ class BagsController < ApplicationController
     #   current_bag.save
     # end
     redirect_to category_path(Category.first)
+  end
+  
+  def destroy
+    @bag = Bag.find(params[:id])
+     @bag.destroy
+     redirect_to user_path(current_user.id)
   end
   
 end

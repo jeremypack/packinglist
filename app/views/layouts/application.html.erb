@@ -5,29 +5,29 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= @title %> / iPackedit.com: "The best online resource for packing"</title>
+  <title>iPackedit.com: "The best online resource for packing lists" / <%= @title %></title>
 	<%= stylesheet_link_tag 'style' %>
   <%= javascript_include_tag 'jquery-1.3.2.min.js', 'jquery-ui-1.7.1.custom.min', 'application'%>
-	<%= yield :head %>
 	<link rel="Shortcut Icon" href="/favicon.ico">
 </head>
 
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><%= link_to 'iPacked it.com', homepage_path %></h1>
+			<%= image_tag '/images/logo.gif' %><h1><%= link_to 'iPacked it.com', homepage_path %></h1>
 		</div>
 		<div id="selected_bag">
-		<% if current_bag.nil? %>
-		<% else %>
-		<%= current_bag.name %>
-		<% end %>
 		</div>
 		<div id="user_login_layout">
 			<%= render 'users/user_bar' %>
 		</div>
 		<div id="tag_line"><em> never forget anything for your travels again!</em></div>
-		
+		<% if current_user.nil? %>
+		<% else %>
+		<% if current_user.name == 'jeremy' %>
+		<div id="admin_bar"><%= link_to 'All Bags', bags_path %> / <%= link_to 'All Items', items_path %> / <%= link_to 'Reasons', reasons_path %> / <%= link_to 'Blogs', blogs_path %></div>
+		<% end %>
+		<% end %>
 		<% if flash[:notice] -%>
 		<div id="check">
 			<div id="flash"><%= flash[:notice] %>

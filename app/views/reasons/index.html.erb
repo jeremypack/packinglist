@@ -14,7 +14,8 @@
 
 	<% if current_user.nil? %>
 	<% else %>
-		<% if current_user.name == 'admin' %>
+		<% if current_user.name == 'jeremy' %>
+			<%= link_to 'Edit', edit_reason_path(reason) %>
 			<%= link_to 'Destroy', reason, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
 	<% end %>

@@ -5,12 +5,12 @@
 <div id="new_item_form">
 	
 		<p>
-		<%= f.label :name %>:
+		<%= f.label :name %>*:
 		<%= f.text_field :name, :size => '20', :class => 'create_input'%>
 		</p>
 		<%= f.hidden_field :category_id, :value => "8"%>
 		<p>
-		<%= f.label :image %>:
+		<%= f.label :image %>: <span class="light">(optional)</span>
 		<%= f.file_field :image, :size => '20' %>
 		</p>
 		<!-- <input type="submit" value="Create" /> -->
