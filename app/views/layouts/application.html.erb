@@ -14,17 +14,21 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<%= image_tag '/images/logo.gif' %><h1><%= link_to 'iPacked it.com', homepage_path %></h1>
-		</div>
-		<div id="selected_bag">
+			<h1><%= link_to 'iPacked it.com', homepage_path %></h1><%= image_tag '/images/bagtag.gif' %>
 		</div>
 		<div id="user_login_layout">
 			<%= render 'users/user_bar' %>
 		</div>
 		<div id="tag_line"><em> never forget anything for your travels again!</em></div>
+		<div id="selected_bag">
+			<% if current_bag.nil? %>
+			<% else %>
+			Selected List: <%= link_to current_bag.name %>
+			<% end %>
+		</div>
 		<% if current_user.nil? %>
 		<% else %>
-		<% if current_user.name == 'jeremy' %>
+		<% if current_user.admin? %>
 		<div id="admin_bar"><%= link_to 'All Bags', bags_path %> / <%= link_to 'All Items', items_path %> / <%= link_to 'Reasons', reasons_path %> / <%= link_to 'Blogs', blogs_path %></div>
 		<% end %>
 		<% end %>

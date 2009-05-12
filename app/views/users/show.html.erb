@@ -5,7 +5,7 @@
 
 </div>
 
-<div id="pack_another_bag">	<p><%= link_to 'create new list', :class => "link_button" %></p>	</div>
+<div id="pack_another_bag">	<p><%= link_to('Create a new List', bags_path, :method => :post, :class => "clickme") %></p>	</div>
 
 <% for bag in @user.bags %>
 

@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      assign_current_bag_to_current_user      
 
       redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!"

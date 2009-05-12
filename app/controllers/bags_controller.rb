@@ -47,9 +47,10 @@ class BagsController < ApplicationController
     @bag.update_attributes(params[:bag])
     @bag.template = params[:bag][:template]
     @bag.featured = params[:bag][:featured]
+    @bag.user = current_user
     @bag.save
     flash[:notice] = "Successfully created..."
-    if current_user.name == 'jeremy'
+    if current_user.admin?
       redirect_to bags_path
     else
       redirect_to user_path(current_user)

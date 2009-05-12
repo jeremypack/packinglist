@@ -24,9 +24,15 @@
 	<div id="collection_of_items_to_pack">
 		<% for item in @category.items %>			
 		<div class="item_to_pack">
-			<%= image_tag item.image.url(:normal) %>
+			<% form_tag bag_bag_items_path(current_bag) do %>
+			<%= hidden_field_tag :item_id, item.id %>
+			<%= image_submit_tag item.image.url(:normal) %>
+			<% end %>
 			<%= item.name %><br/>
-			<span class="buy_now"><%= link_to 'buy now', item.buy_now %></span>
+			<% if item.buy_now == nil %>
+			<% else %>
+			<span class="buy_now"><%= link_to 'buy now', item.buy_now, :popup => true %></span>
+			<% end %>
 			<% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>
 			<%= hidden_field_tag :item_id, item.id %>
 			<!-- <input type="submit" value="Add to bag" /> -->

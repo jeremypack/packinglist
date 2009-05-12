@@ -28,15 +28,49 @@ $(document).ready(function() {
 		return false;
 	})
 	
+	// Add to Bag - Image Submit
+	$(".item_to_pack input[type='image']").click( function(){
+		$.post($(this).parent().attr("action"), $(this).parent().serialize(), null, "script");
+		return false;
+	})
 	
-	$(".pack_item_in_bag").click( function(){
-		$(this).parent().addClass("im_packed");
-	});
-	
-	
-	// setupBagList();
+	increaseQuantityAgain();
+	decreaseQuantityAgain();
+	packItemIntoBag();
  	
 });
+
+	function increaseQuantityAgain()
+	{
+		$(".adding_link").click( function(){
+			$.post($(this).attr("action"), $(this).serialize(), null, "script");
+			return false;
+		});
+	}
+
+	function decreaseQuantityAgain()
+	{
+		$(".minus_link").click( function(){
+			$.post($(this).attr("action"), $(this).serialize(), null, "script");
+			return false;
+		});
+	}	
+
+	function packItemIntoBag()
+	{
+		$(".pack_item_button").click( function(){
+			$.post($(this).parent().attr("action"), $(this).parent().serialize(), null, "script");
+			return false;
+		});
+	}	
+
+
+
+
+
+
+
+
 
 // 	// Packing tick boxes
 // 		

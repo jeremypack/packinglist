@@ -31,7 +31,10 @@ class BagItemsController < ApplicationController
   def increase_quantity
     @bag_item = current_bag.bag_items.find(params[:id])
     @bag_item.increment! :quantity
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js {  }
+    end
   end
   
   def decrease_quantity
@@ -41,7 +44,10 @@ class BagItemsController < ApplicationController
       else
         @bag_item.destroy
       end
-    redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to(:back) }
+        format.js {  }
+      end
   end
   
 end

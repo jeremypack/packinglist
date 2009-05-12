@@ -1,5 +1,4 @@
-<% if current_user == @bag.user %>
-
+<% if current_user == @bag.user or @bag.user == nil %>
 <FIELDSET>
 <LEGEND>Save My Bag</LEGEND>
 
@@ -25,10 +24,6 @@ Where are you going ?<br/>
 <%= f.text_area :description, :cols => 40, :rows => 10, :class => "create_input" %>
 </p>
 <p>
-<%= hidden_field_tag :user_id, :user_id %>
-
-</p>
-<p>
 <%= f.submit 'Save', :class => 'submit_form' %>
 </p>
 <% end %>
@@ -37,7 +32,7 @@ Where are you going ?<br/>
 
 <div id="save_my_bag_instructions">
 	
-	<p>Before you save your list it is a good idea to describe it with some information so that you remember why you packed what you did. This makes it easier change and reuse later on.</p>
+	<p>Before you save your list it is a good idea to describe it with some information so that you remember why you packed what you did. This makes it easier to change and reuse later on.</p>
 	
 	<p>Panic is what they want</p>
 	

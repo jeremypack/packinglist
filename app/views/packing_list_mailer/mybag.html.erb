@@ -1,10 +1,14 @@
-<p>Hi this is your packing list</p>
+<a style="text-decoration:none;" href="http://www.ipackedit.com"><h1 style= "font-size:32px; margin-top:4px; color:orange; text-decoration:none; display:inline;">iPacked it.com</h1></a>
 
-<ul>
+<p style= "font-size:14;">Thanks for using iPacked it.com, enjoy your trip to <%= @bag.country %>!<br/>
+</p>
+<% @bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
+
+<ul><h2 style= "margin:0px; color:orange; font-size:18px;"><%= category.title %></h2>
 	<% for bag_item in @bag.bag_items %>
-		<li>
-			<%= image_tag bag_item.item.image.url(:thumb) %> <%= bag_item.item.name %> x <%= bag_item.quantity%>
-
+		<li style="font-size:12;">
+			<%= bag_item.quantity%> x <%= bag_item.item.name %>
 		</li>
 	<% end %>
 </ul>
+<% end %>
