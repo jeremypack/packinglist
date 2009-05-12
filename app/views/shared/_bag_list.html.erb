@@ -13,9 +13,8 @@
 <% current_bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
 
 
-<div class="bag_category_title"><h4><%= category.title %></h4></div>
-<span class="view_my_bag"><%= link_to 'View my List', current_bag %></span>
-
+<div class="bag_category_title"><h4><%= @category.title %></h4></div>
+<% if @category.title == category.title %>
 <table width="300px">
 	<% for bag_item in bag_items %>
 	<tr>
@@ -37,3 +36,4 @@
 
 <% end %>
 
+<% end %>

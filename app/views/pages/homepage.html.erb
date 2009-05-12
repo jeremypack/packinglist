@@ -39,7 +39,8 @@
 <div id ="completed_bags_holder">
 	<h2 class="underline">Featured List</h2>
 	<div class="completed_bag">
-		<p><%= link_to (@featured_bag.name, bag_path(@featured_bag)) %> - <%= @featured_bag.description %></p>
+		<p><strong><%= @featured_bag.name %></strong> - <span class="light"><%= @featured_bag.created_at.to_formatted_s(:short) %></span><br/>
+		<%= @featured_bag.description %></p>
 		<% for bag_item in @featured_bag.bag_items %>
 		<%= image_tag bag_item.item.image.url (:thumb) %>
 		<% end %>

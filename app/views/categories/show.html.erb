@@ -24,6 +24,7 @@
 	<div id="collection_of_items_to_pack">
 		<% for item in @category.items %>			
 		<div class="item_to_pack">
+			
 			<% form_tag bag_bag_items_path(current_bag) do %>
 			<%= hidden_field_tag :item_id, item.id %>
 			<%= image_submit_tag item.image.url(:normal) %>

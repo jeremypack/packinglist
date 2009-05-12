@@ -7,37 +7,16 @@ $(document).ready(function() {
 		$(this).removeClass("overState");	
 	});
 
-	// Rollover Bag
-	$(".bag_category_title").hover(function() {
-		$(this).next().andSelf().addClass("overState");
-	}, function() {
-		$(this).next().andSelf().removeClass("overState");
-	});
-
 	// Flash Slides Up
 	setTimeout (function() { jQuery("div[id=check]").slideUp('normal'); }, 4000);
 
-	// Sliding Bag View
-	$('.bag_category_title').click(function() {
-		$(this).next().next().slideToggle('normal');
-	})
-
-	// Add to Bag
-	$(".add_to_my_bag").click(function() {
-		$.post($(this).attr("action"), $(this).serialize(), null, "script");
-		return false;
-	})
-	
-	// Add to Bag - Image Submit
-	$(".item_to_pack input[type='image']").click( function(){
-		$.post($(this).parent().attr("action"), $(this).parent().serialize(), null, "script");
-		return false;
-	})
 	
 	increaseQuantityAgain();
 	decreaseQuantityAgain();
 	packItemIntoBag();
- 	
+ 	addToBag()
+	addToBagImage()
+	
 });
 
 	function increaseQuantityAgain()
@@ -64,10 +43,21 @@ $(document).ready(function() {
 		});
 	}	
 
+	function addToBag()
+	{
+		$(".add_to_my_bag").click(function() {
+			$.post($(this).attr("action"), $(this).serialize(), null, "script");
+			return false;
+		});
+	}
 
-
-
-
+	function addToBagImage()
+	{
+		$(".item_to_pack input[type='image']").click( function(){
+			$.post($(this).parent().attr("action"), $(this).parent().serialize(), null, "script");
+			return false;
+		})
+	}
 
 
 

@@ -23,7 +23,7 @@
 		<div id="selected_bag">
 			<% if current_bag.nil? %>
 			<% else %>
-			Selected List: <%= link_to current_bag.name %>
+			List selected for editing: <%= link_to current_bag.name, category_path(Category.first) %>
 			<% end %>
 		</div>
 		<% if current_user.nil? %>

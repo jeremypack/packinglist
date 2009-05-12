@@ -15,32 +15,32 @@
 </fieldset>
 
 <% if @bag.user == nil %>
-<div id="packing_container">
-	<h2 class="underline">Pack It Now</h2>
-	<% if @bag.bag_items.empty? %>
-	Your Bag is Empty
-</div>
-	<% else %>
-	<%= render 'list' %>
-	<% end %>
-</div>
+	<div id="packing_container">
+		<h2 class="underline">Pack It Now</h2>
+			<% if @bag.bag_items.empty? %>
+				Your Bag is Empty
+	</div>
+			<% else %>
+			<%= render 'list' %>
+			<% end %>
+	</div>
 <% else %>
 
-<% if current_user == @bag.user %>
+	<% if current_user == @bag.user %>
+		<div id="packing_container">
+	
+		<h2 class="underline">Pack It Now</h2>
+		<% if @bag.bag_items.empty? %>
+		Your Bag is Empty
+	</div>
+		<% else %>
+		<%= render 'list' %>
+		<% end %>
+	</div>
 
-<div id="packing_container">
-	<h2 class="underline">Pack It Now</h2>
-	<% if @bag.bag_items.empty? %>
-	Your Bag is Empty
-</div>
 	<% else %>
-	<%= render 'list' %>
+
+	<p>This is not your bag!</p>
+
 	<% end %>
-</div>
-
-<% else %>
-
-<p>This is not your bag!</p>
-
-<% end %>
 <% end %>
