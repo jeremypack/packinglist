@@ -1,17 +1,30 @@
-<h2>Log In</h2>
+<% @title = "Login" %>
+
+<div id="login_form">
+<fieldset>
+	<legend>Log In</legend>
+
 
 <% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<p><%= label_tag 'Login:' %><br />
+<%= text_field_tag 'login', @login, :class => 'create_input', :size => '30' %></p>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
-
-<%= hidden_field_tag :bag_id, session[:bag_id] %>
+<p><%= label_tag 'Password:' %><br/>
+<%= password_field_tag 'password', nil, :class => 'create_input', :size => '30' %></p>
 
 <p><%= label_tag 'remember_me', 'Remember me' %>
 <%= check_box_tag 'remember_me', '1', @remember_me %></p>
 
 
-<p><%= submit_tag 'Log in', :class => 'create' %></p>
+<p><%= submit_tag 'Log in', :class => 'submit_form' %></p>
 <% end -%>
+
+</fieldset>
+<p>&nbsp;</p>
+<p>Don't have a username and password? <%= link_to "Sign Up", new_user_path %></p>
+
+</div>
+
+<div id="login_details">
+	<%= error_messages_for :user %>
+</div>

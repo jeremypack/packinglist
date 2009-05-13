@@ -1,0 +1,15 @@
+Belt
+Boardshorts
+Boxers
+Coat
+Flipflops
+Jumper
+Polotop
+Question
+Shirt
+Shoes
+Shorts
+Socks
+Tie
+Trousers
+Tshirt

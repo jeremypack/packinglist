@@ -7,17 +7,19 @@
 <table width= "700px">
   <% for item in @items %>
 <tr>
+
     <td width="50px" height="50px"><%= image_tag item.image.url(:thumb) %></td>  
 		<td> 
-		<% form_for item, :url => item_path(item), :html => {:method => :put} do |f| %>		
-		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => item.category.title %>
-		<%= f.submit "Update" %>
+		<% form_for item, :url => item_path(item), :html => {:method => :put} do |f| %>	
+		<%= f.collection_select :category_id, Category.all, :id, :title, :prompt => item.category.title %></td>
+		<td width="100px"><%= item.name %></td>
+		<td><%= f.file_field :image %></td>	
+		<td>Buy Now:<%= f.text_field :buy_now %></td>
+		<td><%= f.submit "Update" %>
 		<% end %>
 		</td>
-		<td width="100px"><%= item.name %></td>
 		<td><%= link_to 'Edit', edit_item_path(item) %></td>
 		<td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
-		<td width="200px"><%= item.buy_now %></td>
 		
 
 </tr>

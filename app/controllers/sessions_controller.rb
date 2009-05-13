@@ -14,11 +14,11 @@ class SessionsController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
       self.current_user = user
-      assign_current_bag_to_current_user      
+#      assign_current_bag_to_current_user      
       
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default('/')
+      redirect_to user_path(user.id)
       flash[:notice] = "Logged in successfully"
     else
       note_failed_signin
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
 protected
   # Track failed login attempts
   def note_failed_signin
-    flash[:error] = "Couldn't log you in as '#{params[:login]}'"
+    flash[:error] = "Username and password didn't match, please try again."
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 end

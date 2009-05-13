@@ -1,0 +1,9 @@
+<h2 class="underline">Featured List</h2>
+<div class="completed_bag">
+	<%= link_to (@featured_bag.name, bag_path(@featured_bag)) %><br/>
+	<%= @featured_bag.description %>
+	<% for bag_item in @featured_bag.bag_items %>
+	<%= image_tag bag_item.item.image.url (:thumb) %>
+	<!-- <%= bag_item.item.name %>  -->
+	<% end %>
+</div>	

@@ -10,6 +10,15 @@
 
 	<h3 class="underline"><%=h reason.title %></h3>
 	<p><%=h reason.argument %></p>
-	<p><%= link_to 'Start Packing', '/categories/1' %></p>
+	<p><%= link_to('Start Packing', bags_path, :method => :post) %></p>
+
+	<% if current_user.nil? %>
+	<% else %>
+		<% if current_user.admin? %>
+			<%= link_to 'Edit', edit_reason_path(reason) %>
+			<%= link_to 'Destroy', reason, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+	<% end %>
+
 </div>
 <% end %>

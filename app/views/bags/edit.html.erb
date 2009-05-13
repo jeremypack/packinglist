@@ -1,0 +1,47 @@
+<% if current_user == @bag.user or @bag.user == nil %>
+<FIELDSET>
+<LEGEND>Save My Bag</LEGEND>
+
+<div id="save_my_bag_details_form">
+<% form_for(@bag) do |f| %>
+<%= f.error_messages %>
+
+<p>
+<%= f.label :name, 'Bag Name:' %><br />
+<%= f.text_field :name, :size => '42', :class => "create_input" %>
+</p>
+Where are you going ?<br/>
+<%= f.country_select("country", "Country") %>
+</p>
+<p>When are you leaving ?<br/>
+<%= f.select(:month, %w{ January February March April May June July August September October November December }) %> 
+</p>
+<p>Who is the list for ?<br/>
+<%= f.select(:gender, %w{ N/A Male Female }) %> 
+</p>
+<p>
+<%= f.label :description, 'A Short Description:' %><br />
+<%= f.text_area :description, :cols => 40, :rows => 10, :class => "create_input" %>
+</p>
+<p>
+<%= f.submit 'Save', :class => 'submit_form' %>
+</p>
+<% end %>
+</div>
+
+
+<div id="save_my_bag_instructions">
+	
+	<p>Before you save your list it is a good idea to describe it with some information so that you remember why you packed what you did. This makes it easier to change and reuse later on.</p>
+	
+	<p>Panic is what they want</p>
+	
+	<p>If you are going traveling for more than a month or are traveling to multiple destinations then please select the month you depart and
+		your main country.</p>
+</div>
+
+</FIELDSET>
+<% else %>
+
+<p>This isn't your bag</p>
+<% end %>

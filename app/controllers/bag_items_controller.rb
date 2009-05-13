@@ -3,7 +3,6 @@ class BagItemsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
     current_bag.add_item(item)
-    
     respond_to do |format|
       format.html { redirect_to(:back) }
       format.js {  }
@@ -15,7 +14,7 @@ class BagItemsController < ApplicationController
     @bag_item = @bag.bag_items.find(params[:id])
     @bag_item.attributes = params[:bag_item]
     @bag_item.save
-
+    
     puts params.inspect
 
     respond_to do |format|
@@ -25,14 +24,17 @@ class BagItemsController < ApplicationController
   end
   
   def destroy
-#    @bag_item = bag.bag_item.find(:all)
-#    @bag_item.destroy
+   @bag_item = bag.bag_item.find(:all)
+   @bag_item.destroy
   end
   
   def increase_quantity
     @bag_item = current_bag.bag_items.find(params[:id])
     @bag_item.increment! :quantity
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to(:back) }
+      format.js {  }
+    end
   end
   
   def decrease_quantity
@@ -42,7 +44,10 @@ class BagItemsController < ApplicationController
       else
         @bag_item.destroy
       end
-    redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to(:back) }
+        format.js {  }
+      end
   end
   
 end

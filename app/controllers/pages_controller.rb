@@ -1,12 +1,10 @@
 class PagesController < ApplicationController
   
   def homepage
-    @bag = Bag.find(:all, :limit => 1)
-    @bag_templates = Bag.find(:all, :limit => 5)
+    @bag_templates = Bag.template
+    @featured_bag = Bag.featured
     
     @blog = Blog.find(:all, :limit => 1, :order => "created_at asc")
   end
   
-  def reasons
-  end
 end

@@ -1,0 +1,5 @@
+<p><%= link_to 'New Blog Post', new_blog_path %></p>
+
+<% for blog in @blogs %>
+<p><%= blog.title %> <%= link_to 'Edit', edit_blog_path(blog) %></p>
+<% end %>

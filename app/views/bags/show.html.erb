@@ -1,21 +1,33 @@
-<div id="packing_container">
-	<div id="packing_list_title"><h2><%= @bag.name %></h2></div>
-	<div id="add_more_stuff"> <%= link_to 'Add More Items', make_current_bag_path(@bag), :method => :put %></div>
+<% @title = "Packing List Options" %>
+
+<fieldset>
+	<legend>Options</legend>
+
+	<div id="add_more_stuff"><%= link_to 'Edit This List', make_current_bag_path(@bag), :method => :put, :class=> 'link_button' %></div>
+	<div class="seperate_or"> / </div>
+	<div id="save_my_list"><%= link_to 'Save This List', edit_bag_path, :class => 'clickme' %></div>
+	<div class="seperate_or"> / </div>
 	<div id="packing_email_form">
-		
-	<% form_tag email_bag_path(@bag) do %>
-	<%= text_field_tag :email, 'email', :size => 25 %>
-	<%= submit_tag "Send Email", :class => 'create', :disable_with => "Sending..." %>
-	<% end %>
+		<% form_tag email_bag_path(@bag.id) do %>
+		<%= text_field_tag :email, '', :size => 30, :class => 'create_input' %>
+		<%= submit_tag "Send Email", :class => 'submit_form', :disable_with => "Sending..." %>
+		<% end %>
 	</div>
-
-	<% if @bag.bag_items.empty? %>
-	Your Bag is Empty
-	</div>
-	<% else %>
-
-	<%= render 'list' %>
-
-	<% end %>
 	
-</div>
+</fieldset>
+
+<div id="packing_container_title"><h2 class="underline">Pack It Now</h2></div>
+
+	<% if @bag.user == nil or current_user == @bag.user %>
+	
+		<% if @bag.bag_items.empty? %>
+		<p id="packing_container">You haven't put anything in your list!? <%= link_to 'Add some items', make_current_bag_path(@bag), :method => :put %> 
+			or go back and <%= link_to 'start again', homepage_path %></p>
+		<% else %>
+		<div id="packing_container">
+		<%= render 'list' %>
+		</div>
+		<% end %>
+	<% else %>
+	<p id="packing_container">This is not your bag please go back and <%= link_to 'start again', homepage_path %></p>
+<% end %>

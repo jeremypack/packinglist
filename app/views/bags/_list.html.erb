@@ -1,6 +1,7 @@
 <% @bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
-<div><h4><%= category.title %></h4></div>
-<div class="the_packing_list_holder">
+
+<div class="category_packing_title"><h4><%= category.title %></h4></div>
+
 
 	<% for bag_item in bag_items %>
 
@@ -10,16 +11,14 @@
   <tr>
 	  <td width="50px" align="right" class="quantity"><%= bag_item.quantity%></td>
     <td width="50px" ><%= image_tag bag_item.item.image.url(:thumb) %></td>
-		<td width="200px"><% form_for bag_item, :url => bag_bag_item_path(@bag, bag_item), :html => {:method => :put} do |f| %>
+		<td width="200px"><% form_for bag_item, :class=> 'pack_my_item', :url => bag_bag_item_path(@bag, bag_item), :html => {:method => :put} do |f| %>
 			<label>
 				<%= f.check_box :packed %>
-				<%= bag_item.item.name %>
+				<%= truncate(bag_item.item.name, :length => 12) %>
 			</label>	
-				<input type="submit" value="Packed" class="create" />
+				<input type="submit" value="Pack it" class="pack_item_button" />
 				<% end %>
 		</td>				
-		<!-- <td align="right" class="plus"><%= link_to '+', increase_quantity_bag_bag_item_path(current_bag, bag_item), :method => :put %></td>
-		<td align="left" class="minus"><%= link_to '-', decrease_quantity_bag_bag_item_path(current_bag, bag_item), :method => :put %></td> -->
   </tr>
 </table>
 </div>

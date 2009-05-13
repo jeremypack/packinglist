@@ -1,6 +1,7 @@
 <h1>Editing reason</h1>
 
-<% form_for(@reason) do |f| %>
+<% form_for :reason, @reason, :url => reasons_path, :html => { :multipart => true } do |f| %>
+
   <%= f.error_messages %>
 
   <p>
@@ -12,8 +13,8 @@
     <%= f.text_area :argument %>
   </p>
   <p>
-    <%= f.label :image_file_name %><br />
-    <%= f.text_field :image_file_name %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </p>
   <p>
     <%= f.submit 'Update' %>
