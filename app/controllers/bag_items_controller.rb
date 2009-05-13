@@ -2,6 +2,7 @@ class BagItemsController < ApplicationController
 
   def create
     item = Item.find(params[:item_id])
+    @category = item.category
     current_bag.add_item(item)
     respond_to do |format|
       format.html { redirect_to(:back) }
@@ -31,6 +32,7 @@ class BagItemsController < ApplicationController
   def increase_quantity
     @bag_item = current_bag.bag_items.find(params[:id])
     @bag_item.increment! :quantity
+    @category = @bag_item.item.category
     respond_to do |format|
       format.html { redirect_to(:back) }
       format.js {  }
@@ -39,6 +41,7 @@ class BagItemsController < ApplicationController
   
   def decrease_quantity
     @bag_item = current_bag.bag_items.find(params[:id])
+    @category = @bag_item.item.category
     if @bag_item.quantity > 1 
         @bag_item.decrement! :quantity
       else

@@ -1,0 +1,534 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <title>rails's country_select at master - GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="http://github.com/fluidicon.png" title="GitHub" />
+
+    
+      <link href="http://assets0.github.com/stylesheets/bundle.css?add25bbfa82f0b09a209206d69a2366544a9699b" media="screen" rel="stylesheet" type="text/css" />
+    
+
+    
+      
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="http://assets3.github.com/javascripts/bundle.js?add25bbfa82f0b09a209206d69a2366544a9699b" type="text/javascript"></script>
+      
+    
+    
+  
+    
+  
+
+  <link href="http://github.com/feeds/rails/commits/country_select/master" rel="alternate" title="Recent Commits to country_select:master" type="application/atom+xml" />
+
+  <meta name="description" content="Country Select Plugin" />
+
+
+    
+
+    <script type="text/javascript">
+      github_user = null
+    </script>
+  </head>
+
+  
+
+  <body>
+    
+
+    <div id="main">
+      <div id="header" class="">
+        <div class="site">
+          <div class="logo">
+            <a href="http://github.com"><img src="/images/modules/header/logov3.png" alt="github" /></a>
+          </div>
+          
+            <div class="topsearch">
+  <form action="/search" id="top_search_form" method="get">
+    <input type="search" class="search" name="q" /> <input type="submit" value="Search" />
+    <input type="hidden" name="type" value="Everything" />
+    <input type="hidden" name="repo" value="" />
+    <input type="hidden" name="langOverride" value="" />
+    <input type="hidden" name="start_value" value="1" />
+  </form>
+  <div class="links">
+    <a href="/repositories">Browse</a> | <a href="/guides">Guides</a> | <a href="/search">Advanced</a>
+  </div>
+</div>
+          
+          
+            <div class="actions">
+              <a href="http://github.com">Home</a>
+              <a href="/plans"><b><u>Pricing and Signup</u></b></a>
+              <a href="http://github.com/popular/forked">Repositories</a>
+              
+              <a href="/blog">Blog</a>
+              <a href="https://github.com/login">Login</a>
+            </div>
+          
+        </div>
+      </div>
+      
+      
+        
+    <div id="repo_menu">
+      <div class="site">
+        <ul>
+          
+            <li class="active"><a href="http://github.com/rails/country_select/tree/master">Source</a></li>
+
+            <li class=""><a href="http://github.com/rails/country_select/commits/master">Commits</a></li>
+
+            
+            <li class=""><a href="/rails/country_select/network">Network (13)</a></li>
+
+            
+
+            
+            
+              
+              <li class=""><a href="/rails/country_select/issues">Issues (0)</a></li>
+            
+            
+
+            
+              
+              <li class=""><a href="/rails/country_select/downloads">Downloads (0)</a></li>
+            
+
+            
+              
+              <li class=""><a href="http://wiki.github.com/rails/country_select">Wiki (1)</a></li>
+            
+
+            <li class=""><a href="/rails/country_select/graphs">Graphs</a></li>
+
+            
+
+          
+        </ul>
+      </div>
+    </div>
+
+  <div id="repo_sub_menu">
+    <div class="site">
+      <div class="joiner"></div>
+      
+
+      
+
+      
+
+      
+        <ul>
+          <li>
+            <a class="active" href="/rails/country_select/tree/master">master</a>
+          </li>
+          <li>
+            <a href="#">all branches</a>
+            <ul>
+              
+                
+                  <li><a href="/rails/country_select/tree/master">master</a></li>
+                
+              
+            </ul>
+          </li>
+          <li>
+            <a href="#">all tags</a>
+            
+          </li>
+        </ul>
+
+      
+    </div>
+  </div>
+
+  <div class="site">
+    
+
+
+
+
+
+
+
+<div id="repos">
+  
+
+
+<script type="text/javascript">
+  GitHub.currentCommitRef = "master"
+  GitHub.currentRepoOwner = "rails"
+  GitHub.currentRepo = "country_select"
+</script>
+
+
+
+  <div class="repo public">
+    <div class="title">
+      <div class="path">
+        <a href="/rails">rails</a> / <b><a href="http://github.com/rails/country_select/tree">country_select</a></b>
+
+        
+
+          
+
+          
+            
+
+            
+              
+            
+          
+
+          <a href="/signup" class="toggle_watch"><img alt="watch" class="button" src="http://assets3.github.com/images/modules/repos/watch_button.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></a><a href="/signup" class="toggle_watch" style="display:none;"><img alt="watch" class="button" src="http://assets2.github.com/images/modules/repos/unwatch_button.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></a>
+
+          
+            <a href="#" id="download_button" rel="rails/country_select"><img alt="download tarball" class="button" src="http://assets2.github.com/images/modules/repos/download_button.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></a>
+          
+        
+      </div>
+
+      <div class="security private_security" style="display:none">
+        <a href="#private_repo" rel="facebox"><img src="/images/icons/private.png" alt="private" /></a>
+      </div>
+
+      <div id="private_repo" class="hidden">
+        This repository is private.
+        All pages are served over SSL and all pushing and pulling is done over SSH.
+        No one may fork, clone, or view it unless they are added as a <a href="/rails/country_select/edit">member</a>.
+
+        <br/>
+        <br/>
+        Every repository with this icon (<img src="/images/icons/private.png" alt="private" />) is private.
+      </div>
+
+      <div class="security public_security" style="">
+        <a href="#public_repo" rel="facebox"><img src="/images/icons/public.png" alt="public" /></a>
+      </div>
+
+      <div id="public_repo" class="hidden">
+        This repository is public.
+        Anyone may fork, clone, or view it.
+
+        <br/>
+        <br/>
+        Every repository with this icon (<img src="/images/icons/public.png" alt="public" />) is public.
+      </div>
+
+      
+
+        <div class="flexipill">
+          <a href="/rails/country_select/network">
+          <table cellpadding="0" cellspacing="0">
+            <tr><td><img alt="Forks" src="http://assets0.github.com/images/modules/repos/pills/forks.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></td><td class="middle"><span>13</span></td><td><img alt="Right" src="http://assets1.github.com/images/modules/repos/pills/right.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></td></tr>
+          </table>
+          </a>
+        </div>
+
+        <div class="flexipill">
+          <a href="/rails/country_select/watchers">
+          <table cellpadding="0" cellspacing="0">
+            <tr><td><img alt="Watchers" src="http://assets0.github.com/images/modules/repos/pills/watchers.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></td><td class="middle"><span>70</span></td><td><img alt="Right" src="http://assets1.github.com/images/modules/repos/pills/right.png?add25bbfa82f0b09a209206d69a2366544a9699b" /></td></tr>
+          </table>
+          </a>
+        </div>
+      </div>
+    
+    <div class="meta">
+      <table>
+        
+        
+          <tr>
+            <td class="label">Description:</td>
+            <td>
+              <span id="repository_description" rel="/rails/country_select/edit/update" class="">Country Select Plugin</span>
+              
+            </td>
+          </tr>
+        
+
+        
+          
+            <tr>
+              <td class="label">Homepage:</td>
+              <td>
+                
+                  
+                  <a href="http://rubyonrails.com/">http://rubyonrails.com/</a>
+                
+              </td>
+            </tr>
+          
+
+          
+            <tr>
+              <td class="label">Clone&nbsp;URL:</td>
+              
+              <td>
+                <a href="git://github.com/rails/country_select.git" class="git_url_facebox" rel="#git-clone">git://github.com/rails/country_select.git</a>
+                      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+              width="110"
+              height="14"
+              class="clippy"
+              id="clippy" >
+      <param name="movie" value="/flash/clippy.swf"/>
+      <param name="allowScriptAccess" value="always" />
+      <param name="quality" value="high" />
+      <param name="scale" value="noscale" />
+      <param NAME="FlashVars" value="text=git://github.com/rails/country_select.git">
+      <param name="bgcolor" value="#F0F0F0">
+      <param name="wmode" value="opaque">
+      <embed src="/flash/clippy.swf"
+             width="110"
+             height="14"
+             name="clippy"
+             quality="high"
+             allowScriptAccess="always"
+             type="application/x-shockwave-flash"
+             pluginspage="http://www.macromedia.com/go/getflashplayer"
+             FlashVars="text=git://github.com/rails/country_select.git"
+             bgcolor="#F0F0F0"
+             wmode="opaque"
+      />
+      </object>
+
+                <div id="git-clone" style="display:none;">
+                  Give this clone URL to anyone.
+                  <br/>
+                  <code>git clone git://github.com/rails/country_select.git </code>
+                </div>
+              </td>
+            </tr>
+          
+          
+          
+
+          
+
+          
+      </table>
+
+          </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+  <div id="commit">
+    <div class="group">
+        
+  <div class="envelope commit">
+    <div class="human">
+      
+        <div class="message"><pre><a href="/rails/country_select/commit/d3b5d8656df3defc1653aafe1a9bb5f0164c1741">adjust instance tag call for 2.2.0</a> </pre></div>
+      
+
+      <div class="actor">
+        <div class="gravatar">
+          
+          <img alt="" height="30" src="http://www.gravatar.com/avatar/efa76b164a7de4a5730e4fa397cc4425?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" width="30" />
+        </div>
+        <div class="name">Michael Koziarski <span>(author)</span></div>
+          <div class="date">
+            <abbr class="relatize" title="2008-10-08 02:48:03">Wed Oct 08 02:48:03 -0700 2008</abbr> 
+          </div>
+      </div>
+  
+      
+  
+    </div>
+    <div class="machine">
+      <span>c</span>ommit&nbsp;&nbsp;<a href="/rails/country_select/commit/d3b5d8656df3defc1653aafe1a9bb5f0164c1741" hotkey="c">d3b5d8656df3defc1653aafe1a9bb5f0164c1741</a><br />
+      <span>t</span>ree&nbsp;&nbsp;&nbsp;&nbsp;<a href="/rails/country_select/tree/d3b5d8656df3defc1653aafe1a9bb5f0164c1741" hotkey="t">8dba4808138769d9091ef66a6b30ee4b7065f92f</a><br />
+  
+      
+        <span>p</span>arent&nbsp;
+        
+        <a href="/rails/country_select/tree/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" hotkey="p">c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b</a>
+      
+  
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+
+
+  
+    <div id="path">
+      <b><a href="/rails/country_select/tree">country_select</a></b> / 
+    </div>
+
+    
+      
+
+  <script type="text/javascript">
+    GitHub.currentTreeSHA = "d3b5d8656df3defc1653aafe1a9bb5f0164c1741"
+    GitHub.commitSHA = "d3b5d8656df3defc1653aafe1a9bb5f0164c1741"
+    GitHub.currentPath = ""
+  </script>
+
+
+<div id="browser">
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>age</th>
+      <th>
+        <div class="history">
+          <a href="/rails/country_select/commits/master/">history</a>
+        </div>
+        message
+      </th>
+    </tr>
+
+    
+
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="file" src="http://assets3.github.com/images/icons/txt.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/blob/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/MIT-LICENSE" id="77a51dab16e20bd323cae65599548cdaa7bbf5ec">MIT-LICENSE</a></td>
+        
+        <td class="age"> <span class="relatize">Thu Sep 18 11:56:28 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" class="message">Extract the former country_select helper into a...</a> [Michael Koziarski] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="file" src="http://assets3.github.com/images/icons/txt.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/blob/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/README" id="15408fb4215c301912ae83987dada0d850d03896">README</a></td>
+        
+        <td class="age"> <span class="relatize">Thu Sep 18 11:56:28 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" class="message">Extract the former country_select helper into a...</a> [Michael Koziarski] </td>
+      </tr>
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="file" src="http://assets3.github.com/images/icons/txt.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/blob/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/init.rb" id="4568f7bc1bce195107688f026dd76d5f6fac2ed1">init.rb</a></td>
+        
+        <td class="age"> <span class="relatize">Thu Sep 18 11:56:28 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" class="message">Extract the former country_select helper into a...</a> [Michael Koziarski] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="file" src="http://assets3.github.com/images/icons/txt.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/blob/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/install.rb" id="dd99bf4d619b8d04ea55897001b1b0266fbd8cd5">install.rb</a></td>
+        
+        <td class="age"> <span class="relatize">Thu Sep 18 11:56:28 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" class="message">Extract the former country_select helper into a...</a> [Michael Koziarski] </td>
+      </tr>
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="directory" src="http://assets2.github.com/images/icons/dir.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/tree/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/lib" id="88934b1a782f50a39a753a92f828c78250c31004">lib/</a></td>
+        
+        <td class="age"> <span class="relatize">Wed Oct 08 02:48:03 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/d3b5d8656df3defc1653aafe1a9bb5f0164c1741" class="message">adjust instance tag call for 2.2.0</a> [Michael Koziarski] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="file" src="http://assets3.github.com/images/icons/txt.png?add25bbfa82f0b09a209206d69a2366544a9699b" /> </td>
+        <td class="content"> <a href="/rails/country_select/blob/d3b5d8656df3defc1653aafe1a9bb5f0164c1741/uninstall.rb" id="97383334634d7e323699932440387d73052162d3">uninstall.rb</a></td>
+        
+        <td class="age"> <span class="relatize">Thu Sep 18 11:56:28 -0700 2008</span> </td>
+        <td class="message"> <a href="/rails/country_select/commit/c06cd99c0a9e0d3ca9d76326a1f339bd5de4bf0b" class="message">Extract the former country_select helper into a...</a> [Michael Koziarski] </td>
+      </tr>
+    
+  </table>
+</div>
+    
+    
+  
+
+
+
+  
+
+
+
+  <div id="readme" class="announce"><span class="name"></span><div class="plain"><pre>CountrySelect
+=============
+
+Provides a simple helper to get an HTML select list of countries.  The list of countries comes from the ISO 3166 
+standard.  While it is a relatively neutral source of country names, it will still offend some users.
+
+Users are strongly advised to evaluate the suitability of this list given their user base.
+
+Example
+=======
+
+country_select(&quot;user&quot;, &quot;country_name&quot;)
+
+
+Copyright (c) 2008 Michael Koziarski, released under the MIT license
+</pre></div></div>
+
+  </div>
+
+      
+      
+      <div class="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="site">
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog/148-github-shirts-now-available">Shirts</a> |
+            <a href="http://github.com/blog">Blog</a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://groups.google.com/group/github/">Google Group</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://twitter.com/github">Status</a>
+          </div>
+          <div class="company">
+            <span id="_rrt" title="0.03639s from xc88-s00039">GitHub</span>
+            is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="/site/terms">Terms of Service</a> | <a href="/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="sponsor">
+          <a href="http://engineyard.com"><img src="/images/modules/footer/engine_yard_logo.png" alt="Engine Yard" /></a>
+          <div>
+            Hosting provided by our<br /> partners at Engine Yard
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="coming_soon" style="display:none;">
+      This feature is coming soon.  Sit tight!
+    </div>
+
+    
+        <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3769691-2");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+
+    
+  </body>
+</html>
+

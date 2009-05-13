@@ -6,15 +6,12 @@
 	
 	<% else %>
 	
-</div>
 
 
 <!-- Removed Ordered Bag from here -->
-<% current_bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
-
-<div class="bag_category_title"><h4><%= category.title %></h4></div>
+<div class="bag_category_title"><h4><%= @category.title %></h4></div>
 <table width="300px">
-	<% for bag_item in bag_items %>
+  <% current_bag.bag_items.in_category(@category).each do |bag_item| %>
 	<tr>
 		<td width="50px"><%= image_tag bag_item.item.image.url(:thumb) %></td>
 		<td width="50px" class="quantity"><%= bag_item.quantity%></td>
@@ -30,6 +27,8 @@
 	</tr>
 	<% end %>
 </table>
-<% end %>
+
 
 <% end %>
+
+</div>
