@@ -1,3 +1,5 @@
+<% @title = "Packing List Options" %>
+
 <fieldset>
 	<legend>Options</legend>
 
@@ -14,33 +16,18 @@
 	
 </fieldset>
 
-<% if @bag.user == nil %>
-	<div id="packing_container">
-		<h2 class="underline">Pack It Now</h2>
-			<% if @bag.bag_items.empty? %>
-				Your Bag is Empty
-	</div>
-			<% else %>
-			<%= render 'list' %>
-			<% end %>
-	</div>
-<% else %>
+<div id="packing_container_title"><h2 class="underline">Pack It Now</h2></div>
 
-	<% if current_user == @bag.user %>
-		<div id="packing_container">
+	<% if @bag.user == nil or current_user == @bag.user %>
 	
-		<h2 class="underline">Pack It Now</h2>
 		<% if @bag.bag_items.empty? %>
-		Your Bag is Empty
-	</div>
+		<p id="packing_container">You haven't put anything in your list!? <%= link_to 'Add some items', make_current_bag_path(@bag), :method => :put %> 
+			or go back and <%= link_to 'start again', homepage_path %></p>
 		<% else %>
+		<div id="packing_container">
 		<%= render 'list' %>
+		</div>
 		<% end %>
-	</div>
-
 	<% else %>
-
-	<p>This is not your bag!</p>
-
-	<% end %>
+	<p id="packing_container">This is not your bag please go back and <%= link_to 'start again', homepage_path %></p>
 <% end %>

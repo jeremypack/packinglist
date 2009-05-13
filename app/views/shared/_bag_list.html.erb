@@ -1,5 +1,5 @@
 <div id="bag_title">
-	<h3><%= current_bag.name %></h3>
+	<h3><%= current_bag.name %></h3><span class="light"> <%= pluralize(current_bag.bag_items.size, "Item") %> in total</span>
 
 	<% if current_bag.bag_items.empty? %>
 	<p>Your Bag is Empty</p>
@@ -12,15 +12,13 @@
 <!-- Removed Ordered Bag from here -->
 <% current_bag.bag_items.group_by{|bag_item| bag_item.item.category}.each do |category, bag_items|%>
 
-
-<div class="bag_category_title"><h4><%= @category.title %></h4></div>
-<% if @category.title == category.title %>
+<div class="bag_category_title"><h4><%= category.title %></h4></div>
 <table width="300px">
 	<% for bag_item in bag_items %>
 	<tr>
 		<td width="50px"><%= image_tag bag_item.item.image.url(:thumb) %></td>
-		<td width="55px" class="quantity"><%= bag_item.quantity%></td>
-		<td width="145px"><%= bag_item.item.name %></td>			
+		<td width="50px" class="quantity"><%= bag_item.quantity%></td>
+		<td width="150px"><%= bag_item.item.name %></td>			
 		<td width="25px">
 			<% form_tag increase_quantity_bag_bag_item_path(current_bag, bag_item), :method => :put, :class => 'adding_link' do %>
 			<%= image_submit_tag "/images/plus.gif" %>
@@ -32,8 +30,6 @@
 	</tr>
 	<% end %>
 </table>
-<% end %>
-
 <% end %>
 
 <% end %>

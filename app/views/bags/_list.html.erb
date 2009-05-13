@@ -2,7 +2,6 @@
 
 <div class="category_packing_title"><h4><%= category.title %></h4></div>
 
-<div class="the_packing_list_holder">
 
 	<% for bag_item in bag_items %>
 
@@ -15,7 +14,7 @@
 		<td width="200px"><% form_for bag_item, :class=> 'pack_my_item', :url => bag_bag_item_path(@bag, bag_item), :html => {:method => :put} do |f| %>
 			<label>
 				<%= f.check_box :packed %>
-				<%= bag_item.item.name %>
+				<%= truncate(bag_item.item.name, :length => 12) %>
 			</label>	
 				<input type="submit" value="Pack it" class="pack_item_button" />
 				<% end %>

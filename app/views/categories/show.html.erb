@@ -1,13 +1,15 @@
-<% @title = "Create a New Bag" %>
+<% @title = "Create a New Packing List" %>
 
 <% if @category == @categories.last %>
 <div id="new_user_item_container">
 	<%= render 'items/new_form' %>
 </div>
-<div id="finished_packing"><%= link_to 'Finish Packing', current_bag, :class => 'clickme' %></div>
 <% else %>
-<div id="only_finished_packing"><%= link_to 'Finish Packing', current_bag, :class => 'clickme' %></div>
+<div id="category_blurb">
+	<strong>A little bit lost?</strong> - Its simple! Click through the different categories on the left hand side. When you see an item you want to pack click the <span class="add">add to list</span> button. If their is an item that we don't have already, you can add it to the custom section by <%= link_to 'clicking here', category_path(Category.last) %> or visit the <%= link_to 'custom', category_path(Category.last) %> section directly.
+</div>
 <% end %>
+<div id="finished_packing"><%= link_to 'Finish Packing', current_bag, :class => 'clickme' %></div>
 
 <div id="wardrobe">
 	<div id="wardrobe_title" class="underline">
@@ -25,20 +27,33 @@
 		<% for item in @category.items %>			
 		<div class="item_to_pack">
 			
-			<% form_tag bag_bag_items_path(current_bag) do %>
-			<%= hidden_field_tag :item_id, item.id %>
-			<%= image_submit_tag item.image.url(:normal) %>
-			<% end %>
-			<%= item.name %><br/>
-			<% if item.buy_now == nil %>
-			<% else %>
-			<span class="buy_now"><%= link_to 'buy now', item.buy_now, :popup => true %></span>
-			<% end %>
-			<% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>
-			<%= hidden_field_tag :item_id, item.id %>
-			<!-- <input type="submit" value="Add to bag" /> -->
-			<%= submit_tag "Add to Bag", :class => 'add' %>
-			<% end %>
+			<table>
+				<tr>
+					<td height="100px"><% form_tag bag_bag_items_path(current_bag) do %>
+					<%= hidden_field_tag :item_id, item.id %>
+					<%= image_submit_tag item.image.url(:normal) %>
+					<% end %></td>
+				</tr>
+				
+				<tr>
+					<td height="20px"><%= truncate(item.name, :length =>15) %></td>
+				</tr>	
+				<tr>
+					<td height="15px">
+					<% if item.buy_now == nil %>
+					<% else %>
+					<span class="buy_now"><%= link_to 'buy now', item.buy_now, :popup => true %></span>
+					<% end %></td>
+				</tr>
+				
+				<tr>
+					<td height="20px"><% form_tag bag_bag_items_path(current_bag), :class => 'add_to_my_bag' do %>
+					<%= hidden_field_tag :item_id, item.id %>
+					<!-- <input type="submit" value="Add to bag" /> -->
+					<%= submit_tag "Add to List", :class => 'add' %>
+					<% end %></td>
+				</tr>
+			</table>
 		</div>
 		<% end %>
 	</div>
