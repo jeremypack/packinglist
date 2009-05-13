@@ -36,6 +36,7 @@
 <%= render 'bags/templates' %>
 </div>
 
+<% if @featured_bag %>
 <div id ="completed_bags_holder">
 	<h2 class="underline">Featured List</h2>
 	<div class="completed_bag">
@@ -46,3 +47,4 @@
 		<% end %>
 	</div>	
 </div>
+<% end %>
